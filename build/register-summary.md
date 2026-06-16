@@ -1,11 +1,9 @@
-# My OGC Building Blocks repository
+# Utility Building Blocks
 
-This is an example text for the abstract. It should be short and to the point.
-A "Tell me more" link will appear if there is an additional description with a longer explanation.
+General purpose patterns for reuse
 
 
-The description can be longer. Both **the abstract** *and the description* support Markdown,
-including [links](https://google.es).
+Things that are common, but not scoped OGC.  Labelling - such as different forms of multi-part and multilingual labels
 
 
 ## Building Blocks

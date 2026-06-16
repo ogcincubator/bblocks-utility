@@ -1,8 +1,8 @@
 {
-  "name": "My OGC Building Blocks repository",
-  "abstract": "This is an example text for the abstract. It should be short and to the point.\nA \"Tell me more\" link will appear if there is an additional description with a longer explanation.\n",
-  "description": "The description can be longer. Both **the abstract** *and the description* support Markdown,\nincluding [links](https://google.es).\n",
-  "modified": "2026-06-16T16:51:13.873226",
+  "name": "Utility Building Blocks",
+  "abstract": "General purpose patterns for reuse\n",
+  "description": "Things that are common, but not scoped OGC.  Labelling - such as different forms of multi-part and multilingual labels\n",
+  "modified": "2026-06-16T19:58:57.745123",
   "tooling": {
     "bblocks-postprocess": {
       "commitId": "\"89c04825320d476cbe210a33c6f4a1b40078df17",

@@ -62,7 +62,7 @@
         {
           "language": "ttl",
           "url": "https://ogcincubator.github.io/bblocks-utility/build/tests/bbr/utils/compoundName/example_1_1.ttl",
-          "code": "@prefix commonpatterns: <https://w3id.org/ogc/utils/label/> .\n@prefix dcterms: <http://purl.org/dc/terms/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n\n[] rdfs:label \"IS II - DP 3333\" ;\n    dcterms:hasPart [ rdfs:label \"DP 3333\" ;\n            commonpatterns:namePartType \"Source\" ],\n        [ rdfs:label \"IS II\" ;\n            commonpatterns:namePartType \"Stamp\" ] .\n\n"
+          "code": "@prefix commonpatterns: <https://w3id.org/ogc/utils/label/> .\n@prefix dcterms: <http://purl.org/dc/terms/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n\n[] rdfs:label \"IS II - DP 3333\" ;\n    dcterms:hasPart [ rdfs:label \"IS II\" ;\n            commonpatterns:namePartType \"Stamp\" ],\n        [ rdfs:label \"DP 3333\" ;\n            commonpatterns:namePartType \"Source\" ] .\n\n"
         }
       ]
     },
@@ -85,7 +85,7 @@
         {
           "language": "ttl",
           "url": "https://ogcincubator.github.io/bblocks-utility/build/tests/bbr/utils/compoundName/example_2_1.ttl",
-          "code": "@prefix commonpatterns: <https://w3id.org/ogc/utils/label/> .\n@prefix dcterms: <http://purl.org/dc/terms/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n\n[] rdfs:label \"IS II - DP 3333\" ;\n    dcterms:hasPart [ rdfs:label \"DP 3333\" ;\n            commonpatterns:namePartRef \"wa-plan-register:dp333\" ;\n            commonpatterns:namePartType \"wa-plan:planTypes\" ],\n        [ rdfs:label \"IS II\" ;\n            commonpatterns:namePartType \"Stamp\" ] .\n\n"
+          "code": "@prefix commonpatterns: <https://w3id.org/ogc/utils/label/> .\n@prefix dcterms: <http://purl.org/dc/terms/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n\n[] rdfs:label \"IS II - DP 3333\" ;\n    dcterms:hasPart [ rdfs:label \"IS II\" ;\n            commonpatterns:namePartType \"Stamp\" ],\n        [ rdfs:label \"DP 3333\" ;\n            commonpatterns:namePartRef \"wa-plan-register:dp333\" ;\n            commonpatterns:namePartType \"wa-plan:planTypes\" ] .\n\n"
         }
       ]
     }

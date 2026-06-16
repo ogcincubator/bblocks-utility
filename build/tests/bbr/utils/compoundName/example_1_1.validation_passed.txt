@@ -1,5 +1,5 @@
 Validation report for ogc.bbr.utils.compoundName - Compound Name
-Generated 2026-06-16T16:51:14.294558+00:00
+Generated 2026-06-16T19:58:58.364651+00:00
 === Files ===
 Using examples/strings.json from examples
 JSON-LD context is present - uplifting
@@ -17,7 +17,7 @@ Validation result for _sources/compoundName/rules.shacl:
   Conforms: True
   
 Focus nodes for _sources/compoundName/rules.shacl:
- - Shape _:n7d6fb9f0d80e46bc97c0d28cbe2c777eb1: *none*
+ - Shape _:ndfaa8d7c8bb54fe89ab9e16a1a0c8ef8b1: *none*
 
 === End SHACL ===
 
