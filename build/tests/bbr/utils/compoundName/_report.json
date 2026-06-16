@@ -2,7 +2,7 @@
   "title": "Validation report for ogc.bbr.utils.compoundName - Compound Name",
   "bblockName": "Compound Name",
   "bblockId": "ogc.bbr.utils.compoundName",
-  "generated": "2026-06-16T16:45:41.814555+00:00",
+  "generated": "2026-06-16T16:51:14.324713+00:00",
   "result": true,
   "items": [
     {
@@ -72,12 +72,12 @@
             {
               "shaclFile": "_sources/compoundName/rules.shacl",
               "focusNodes": {
-                "_:nb3f62a8b95774217a6137bebea11b17db1": {
+                "_:n7d6fb9f0d80e46bc97c0d28cbe2c777eb1": {
                   "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/compoundName/rules.shacl:\n - Shape _:nb3f62a8b95774217a6137bebea11b17db1: *none*\n"
+              "message": "Focus nodes for _sources/compoundName/rules.shacl:\n - Shape _:n7d6fb9f0d80e46bc97c0d28cbe2c777eb1: *none*\n"
             }
           ]
         }
@@ -150,12 +150,12 @@
             {
               "shaclFile": "_sources/compoundName/rules.shacl",
               "focusNodes": {
-                "_:nb3f62a8b95774217a6137bebea11b17db1": {
+                "_:n7d6fb9f0d80e46bc97c0d28cbe2c777eb1": {
                   "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/compoundName/rules.shacl:\n - Shape _:nb3f62a8b95774217a6137bebea11b17db1: *none*\n"
+              "message": "Focus nodes for _sources/compoundName/rules.shacl:\n - Shape _:n7d6fb9f0d80e46bc97c0d28cbe2c777eb1: *none*\n"
             }
           ]
         }
