@@ -10,7 +10,7 @@
         {
           "properties": {
             "properties": {
-              "$ref": "https://opengeospatial.github.io/bblocks-template/build/annotated/bbr/template/mySchema/schema.json"
+              "$ref": "https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/template/mySchema/schema.json"
             }
           }
         }
