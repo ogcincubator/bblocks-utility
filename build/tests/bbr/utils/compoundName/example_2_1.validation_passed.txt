@@ -1,0 +1,23 @@
+Validation report for ogc.bbr.utils.compoundName - Compound Name
+Generated 2026-06-16T16:45:41.814457+00:00
+=== Files ===
+Using examples/coderefs.json from examples
+JSON-LD context is present - uplifting
+Output JSON-LD example_2_1.jsonld created
+Output Turtle example_2_1.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+Validation passed
+=== End JSON Schema ===
+
+=== SHACL ===
+Validation result for _sources/compoundName/rules.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/compoundName/rules.shacl:
+ - Shape _:nb3f62a8b95774217a6137bebea11b17db1: *none*
+
+=== End SHACL ===
+

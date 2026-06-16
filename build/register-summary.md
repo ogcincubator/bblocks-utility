@@ -10,15 +10,9 @@ including [links](https://google.es).
 
 ## Building Blocks
 
-### `ogc.bbr.template.mySchema` — My Schema
+### `ogc.bbr.utils.compoundName` — Compound Name
 
 **Type:** schema
 
-An example schema defining the set of properties of any type of object.
-
-### `ogc.bbr.template.myFeature` — Custom Feature
-
-**Type:** schema
-
-This examples shows a simple customisation for OGC API Feature schemas
+A multiple part name, consisting of a set of strings with functional roles that can be combined into single string using a template.
 

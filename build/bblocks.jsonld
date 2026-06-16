@@ -194,7 +194,7 @@
   "name": "Building Blocks - My OGC Building Blocks repository",
   "abstract": "This is an example text for the abstract. It should be short and to the point.\nA \"Tell me more\" link will appear if there is an additional description with a longer explanation.\n",
   "description": "The description can be longer. Both **the abstract** *and the description* support Markdown,\nincluding [links](https://google.es).\n",
-  "modified": "2026-06-16T16:44:28.687380",
+  "modified": "2026-06-16T16:45:41.102707",
   "tooling": {
     "bblocks-postprocess": {
       "commitId": "\"89c04825320d476cbe210a33c6f4a1b40078df17",
@@ -240,187 +240,89 @@
   "skos:prefLabel": "Building Blocks - My OGC Building Blocks repository",
   "hasConcepts": [
     {
-      "itemIdentifier": "ogc.bbr.template.mySchema",
-      "$schema": "metaschema.yaml",
-      "name": "My Schema",
-      "abstract": "An example schema defining the set of properties of any type of object.",
+      "itemIdentifier": "ogc.bbr.utils.compoundName",
+      "name": "Compound Name",
+      "abstract": "A multiple part name, consisting of a set of strings with functional roles that can be combined into single string using a template.",
       "status": "under-development",
       "dateTimeAddition": "2023-04-05T00:00:00Z",
       "itemClass": "schema",
-      "register": "ogc-building-block-register",
+      "register": "icsm-csdm",
       "version": "0.1",
-      "link": "https://github.com/opengeospatial/bblock-template",
+      "dateOfLastChange": "2026-06-16",
+      "link": "https://github.com/icsm-au/3d-csdm-schema",
       "sources": [
         {
-          "title": "Sample source document",
-          "link": "https://example.com/sources/1"
+          "title": "CSDM model",
+          "link": "https://github.com/icsm-au/3d-csdm"
         }
       ],
+      "maturity": "development",
+      "scope": "unstable",
       "tags": [
-        "templates"
+        "utils"
       ],
       "shaclShapes": [
         {
           "prof:hasArtifact": [
-            "https://ogcincubator.github.io/bblocks-utility/_sources/mySchema/shapes.shacl"
+            "https://ogcincubator.github.io/bblocks-utility/_sources/compoundName/rules.shacl"
           ],
-          "rdfs:seeAlso": "bblocks://ogc.bbr.template.mySchema",
+          "rdfs:seeAlso": "bblocks://ogc.bbr.utils.compoundName",
           "prof:hasRole": "role:validation",
           "dct:format": "text/turtle",
           "dct:conformsTo": "shacl:"
-        }
-      ],
-      "ldContext": {
-        "prof:hasArtifact": "https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/template/mySchema/context.jsonld",
-        "prof:hasRole": "role:mapping",
-        "dct:format": "application/ld+json",
-        "dct:conformsTo": "https://www.w3.org/TR/json-ld11/"
-      },
-      "dateOfLastChange": "2023-04-05",
-      "schema": [
-        {
-          "prof:hasArtifact": "https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/template/mySchema/schema.yaml",
-          "prof:hasRole": "role:schema",
-          "dct:format": "application/yaml",
-          "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
-        },
-        {
-          "prof:hasArtifact": "https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/template/mySchema/schema.json",
-          "prof:hasRole": "role:schema",
-          "dct:format": "application/json",
-          "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
-        }
-      ],
-      "sourceSchema": "https://ogcincubator.github.io/bblocks-utility/_sources/mySchema/schema.yaml",
-      "sourceLdContext": "https://ogcincubator.github.io/bblocks-utility/_sources/mySchema/context.jsonld",
-      "resolvedSchemaProperties": "https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/template/mySchema/resolvedProperties.json",
-      "sourceFiles": "https://ogcincubator.github.io/bblocks-utility/_sources/mySchema/",
-      "validationPassed": true,
-      "testOutputs": "https://github.com/ogcincubator/bblocks-utility/blob/master/build/tests/bbr/template/mySchema/",
-      "documentation": {
-        "markdown": {
-          "mediatype": "text/markdown",
-          "url": "https://ogcincubator.github.io/bblocks-utility/build/generateddocs/markdown/bbr/template/mySchema/index.md"
-        },
-        "json-full": {
-          "mediatype": "application/json",
-          "url": "https://ogcincubator.github.io/bblocks-utility/build/generateddocs/json-full/bbr/template/mySchema/index.json"
-        },
-        "bblocks-viewer": {
-          "mediatype": "text/html",
-          "url": "https://ogcincubator.github.io/bblocks-utility/bblock/ogc.bbr.template.mySchema"
-        }
-      },
-      "@id": "bblocks://ogc.bbr.template.mySchema",
-      "@type": [
-        "bblocks:Schema",
-        "skos:Concept",
-        "dcat:Dataset",
-        "bblocks:BBlock"
-      ],
-      "skos:prefLabel": "My Schema",
-      "openAPIDocument": null,
-      "ontology": null,
-      "rdfData": [],
-      "dependsOn": null,
-      "isProfileOf": null,
-      "skos:topConceptOf": {
-        "@id": "https://ogcincubator.github.io/bblocks-utility/"
-      }
-    },
-    {
-      "itemIdentifier": "ogc.bbr.template.myFeature",
-      "name": "Custom Feature",
-      "abstract": "This examples shows a simple customisation for OGC API Feature schemas",
-      "status": "under-development",
-      "dateTimeAddition": "2023-05-19T00:00:00Z",
-      "itemClass": "schema",
-      "register": "ogc-building-block-examples",
-      "version": "1.0",
-      "sources": [
-        {
-          "title": "OGC API - Features, Part 1, 7.16.2: Feature Response",
-          "link": "https://docs.ogc.org/is/17-069r3/17-069r3.html#_response_7"
         }
       ],
       "dependsOn": [
-        "bblocks://ogc.bbr.template.mySchema",
-        "bblocks://ogc.geo.features.feature"
+        "bblocks://ogc.ogc-utils.iri-or-curie"
       ],
-      "tags": [
-        "feature",
-        "examples"
-      ],
-      "group": "Examples",
-      "highlighted": true,
-      "shaclShapes": [
-        {
-          "prof:hasArtifact": [
-            "https://ogcincubator.github.io/bblocks-utility/_sources/mySchema/shapes.shacl"
-          ],
-          "rdfs:seeAlso": "bblocks://ogc.bbr.template.mySchema",
-          "prof:hasRole": "role:validation",
-          "dct:format": "text/turtle",
-          "dct:conformsTo": "shacl:"
-        },
-        {
-          "prof:hasArtifact": [
-            "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl"
-          ],
-          "rdfs:seeAlso": "bblocks://ogc.geo.features.feature",
-          "prof:hasRole": "role:validation",
-          "dct:format": "text/turtle",
-          "dct:conformsTo": "shacl:"
-        }
-      ],
-      "dateOfLastChange": "2023-05-19",
+      "ldContext": {
+        "prof:hasArtifact": "https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/utils/compoundName/context.jsonld",
+        "prof:hasRole": "role:mapping",
+        "dct:format": "application/ld+json",
+        "dct:conformsTo": "https://www.w3.org/TR/json-ld11/"
+      },
       "schema": [
         {
-          "prof:hasArtifact": "https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/template/myFeature/schema.yaml",
+          "prof:hasArtifact": "https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/utils/compoundName/schema.yaml",
           "prof:hasRole": "role:schema",
           "dct:format": "application/yaml",
           "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
         },
         {
-          "prof:hasArtifact": "https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/template/myFeature/schema.json",
+          "prof:hasArtifact": "https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/utils/compoundName/schema.json",
           "prof:hasRole": "role:schema",
           "dct:format": "application/json",
           "dct:conformsTo": "https://json-schema.org/draft/2020-12/schema"
         }
       ],
-      "sourceSchema": "https://ogcincubator.github.io/bblocks-utility/_sources/myFeature/schema.yaml",
-      "ldContext": {
-        "prof:hasArtifact": "https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/template/myFeature/context.jsonld",
-        "prof:hasRole": "role:mapping",
-        "dct:format": "application/ld+json",
-        "dct:conformsTo": "https://www.w3.org/TR/json-ld11/"
-      },
-      "resolvedSchemaProperties": "https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/template/myFeature/resolvedProperties.json",
-      "sourceFiles": "https://ogcincubator.github.io/bblocks-utility/_sources/myFeature/",
+      "sourceSchema": "https://ogcincubator.github.io/bblocks-utility/_sources/compoundName/schema.json",
+      "sourceLdContext": "https://ogcincubator.github.io/bblocks-utility/_sources/compoundName/context.jsonld",
+      "resolvedSchemaProperties": "https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/utils/compoundName/resolvedProperties.json",
+      "sourceFiles": "https://ogcincubator.github.io/bblocks-utility/_sources/compoundName/",
       "validationPassed": true,
-      "testOutputs": "https://github.com/ogcincubator/bblocks-utility/blob/master/build/tests/bbr/template/myFeature/",
+      "testOutputs": "https://github.com/ogcincubator/bblocks-utility/blob/master/build/tests/bbr/utils/compoundName/",
       "documentation": {
         "markdown": {
           "mediatype": "text/markdown",
-          "url": "https://ogcincubator.github.io/bblocks-utility/build/generateddocs/markdown/bbr/template/myFeature/index.md"
+          "url": "https://ogcincubator.github.io/bblocks-utility/build/generateddocs/markdown/bbr/utils/compoundName/index.md"
         },
         "json-full": {
           "mediatype": "application/json",
-          "url": "https://ogcincubator.github.io/bblocks-utility/build/generateddocs/json-full/bbr/template/myFeature/index.json"
+          "url": "https://ogcincubator.github.io/bblocks-utility/build/generateddocs/json-full/bbr/utils/compoundName/index.json"
         },
         "bblocks-viewer": {
           "mediatype": "text/html",
-          "url": "https://ogcincubator.github.io/bblocks-utility/bblock/ogc.bbr.template.myFeature"
+          "url": "https://ogcincubator.github.io/bblocks-utility/bblock/ogc.bbr.utils.compoundName"
         }
       },
-      "@id": "bblocks://ogc.bbr.template.myFeature",
+      "@id": "bblocks://ogc.bbr.utils.compoundName",
       "@type": [
         "bblocks:Schema",
         "skos:Concept",
         "dcat:Dataset",
         "bblocks:BBlock"
       ],
-      "skos:prefLabel": "Custom Feature",
+      "skos:prefLabel": "Compound Name",
       "openAPIDocument": null,
       "ontology": null,
       "rdfData": [],
@@ -432,10 +334,7 @@
   ],
   "skos:hasTopConcept": [
     {
-      "@id": "bblocks://ogc.bbr.template.mySchema"
-    },
-    {
-      "@id": "bblocks://ogc.bbr.template.myFeature"
+      "@id": "bblocks://ogc.bbr.utils.compoundName"
     }
   ]
 }

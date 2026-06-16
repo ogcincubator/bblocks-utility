@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Compound Name",
+  "anyOf": [
+    {
+      "required": [
+        "label"
+      ]
+    },
+    {
+      "required": [
+        "hasPart"
+      ]
+    }
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "label": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string"
+        }
+      ],
+      "x-jsonld-id": "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "template": {
+      "type": "string"
+    },
+    "hasPart": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "label": {
+            "type": "string",
+            "x-jsonld-id": "http://www.w3.org/2000/01/rdf-schema#label"
+          },
+          "ref": {
+            "$ref": "https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/iri-or-curie/schema.json",
+            "x-jsonld-id": "https://w3id.org/ogc/utils/label/namePartRef"
+          },
+          "type": {
+            "$ref": "https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/iri-or-curie/schema.json",
+            "x-jsonld-id": "https://w3id.org/ogc/utils/label/namePartType"
+          }
+        },
+        "anyOf": [
+          {
+            "required": [
+              "label"
+            ]
+          },
+          {
+            "required": [
+              "ref"
+            ]
+          }
+        ]
+      },
+      "x-jsonld-id": "http://purl.org/dc/terms/hasPart"
+    }
+  },
+  "x-jsonld-extra-terms": {
+    "name": "https://w3id.org/ogc/utils/label/name",
+    "CompoundName": "https://w3id.org/ogc/utils/label/CompoundName"
+  },
+  "x-jsonld-prefixes": {
+    "commonpatterns": "https://w3id.org/ogc/utils/label/",
+    "dct": "http://purl.org/dc/terms/",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+  }
+}

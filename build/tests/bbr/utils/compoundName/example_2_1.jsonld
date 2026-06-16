@@ -1,0 +1,18 @@
+{
+  "@context": "https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/utils/compoundName/context.jsonld",
+  "id": "CompoundNameExample",
+  "type": "CompoundName",
+  "label": "IS II - DP 3333",
+  "comment": "the label of the part is optional - but can be cross checked",
+  "hasPart": [
+    {
+      "type": "wa-plan:planTypes",
+      "ref": "wa-plan-register:dp333",
+      "label": "DP 3333"
+    },
+    {
+      "type": "Stamp",
+      "label": "IS II"
+    }
+  ]
+}

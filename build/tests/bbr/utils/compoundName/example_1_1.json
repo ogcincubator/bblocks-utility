@@ -1,0 +1,16 @@
+{
+  "id": "CompoundNameExample",
+  "type": "CompoundName",
+  "label": "IS II - DP 3333",
+  "comment": "note: label may be absent or subject to rules regarding presence of parts",
+  "hasPart": [
+    {
+      "type": "Source",
+      "label": "DP 3333"
+    },
+    {
+      "type": "Stamp",
+      "label": "IS II"
+    }
+  ]
+}

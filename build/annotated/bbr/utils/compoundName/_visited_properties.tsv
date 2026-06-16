@@ -1,0 +1,7 @@
+path	@id	schema
+/label	http://www.w3.org/2000/01/rdf-schema#label	/github/workspace/build/annotated/bbr/utils/compoundName/schema.yaml
+/template		/github/workspace/build/annotated/bbr/utils/compoundName/schema.yaml
+/hasPart	http://purl.org/dc/terms/hasPart	/github/workspace/build/annotated/bbr/utils/compoundName/schema.yaml
+/hasPart/label	http://www.w3.org/2000/01/rdf-schema#label	/github/workspace/build/annotated/bbr/utils/compoundName/schema.yaml
+/hasPart/ref	https://w3id.org/ogc/utils/label/namePartRef	/github/workspace/build/annotated/bbr/utils/compoundName/schema.yaml
+/hasPart/type	https://w3id.org/ogc/utils/label/namePartType	/github/workspace/build/annotated/bbr/utils/compoundName/schema.yaml
