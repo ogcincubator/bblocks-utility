@@ -12,7 +12,7 @@ description: |
   including [links](https://google.es).
 
 # Customize the following prefix (will be prepended to the path of the building blocks):
-identifier-prefix: ogc.bbr.template.
+identifier-prefix: ogc.bbr.utils.
 
 # List of imports ("default" is an alias for the main OGC Building Blocks Register)
 imports:

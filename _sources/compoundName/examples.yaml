@@ -1,0 +1,16 @@
+- title: Example CompoundName
+  content: |-
+   A name with a label, but also a set of parts with roles that can be validated against content rules.
+
+  snippets:
+    - language: json
+      ref: examples/strings.json
+      base-uri: http://www.example.com/namedobjects/
+
+- title: Referenced Parts
+  content: |-
+   An example name where part of the name is a reference to a vocabulary source.  This can us used for validation and multi-linual applications
+  snippets:
+    - language: json
+      ref: examples/coderefs.json
+      base-uri: http://www.example.com/namedobjects/

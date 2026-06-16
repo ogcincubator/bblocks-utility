@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Compound Name",
+  "anyOf": [
+    {
+      "required": [
+        "label"
+      ]
+    },
+    {
+      "required": [
+        "hasPart"
+      ]
+    }
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "label": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "template": {
+      "type": "string"
+    },
+    "hasPart": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "ref": {
+            "$ref": "bblocks://ogc.ogc-utils.iri-or-curie"
+          },
+          "type": {
+            "$ref": "bblocks://ogc.ogc-utils.iri-or-curie"
+          }
+        },
+        "anyOf": [
+          {
+            "required": [
+              "label"
+            ]
+          },
+          {
+            "required": [
+              "ref"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
