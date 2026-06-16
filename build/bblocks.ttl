@@ -2,8 +2,8 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix ns1: <http://www.iana.org/assignments/> .
-@prefix ns2: <http://www.w3.org/ns/oa#> .
+@prefix ns1: <http://www.w3.org/ns/oa#> .
+@prefix ns2: <http://www.iana.org/assignments/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prof: <http://www.w3.org/ns/dx/prof/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -21,31 +21,31 @@
     rdfs:label "Custom Feature" ;
     dct:abstract "This examples shows a simple customisation for OGC API Feature schemas"^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2023-05-19T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://opengeospatial.github.io/bblocks-template/bblock/ogc.bbr.template.myFeature> ],
+    dct:description [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-utility/build/generateddocs/json-full/bbr/template/myFeature/index.json> ],
         [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://opengeospatial.github.io/bblocks-template/build/generateddocs/markdown/bbr/template/myFeature/index.md> ],
-        [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://opengeospatial.github.io/bblocks-template/build/generateddocs/json-full/bbr/template/myFeature/index.json> ] ;
+            rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-utility/build/generateddocs/markdown/bbr/template/myFeature/index.md> ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-utility/bblock/ogc.bbr.template.myFeature> ] ;
     dct:hasVersion "1.0" ;
     dct:modified "2023-05-19"^^xsd:date ;
     dct:source <https://docs.ogc.org/is/17-069r3/17-069r3.html#_response_7> ;
-    skos:inScheme <https://opengeospatial.github.io/bblocks-template/> ;
+    skos:inScheme <https://ogcincubator.github.io/bblocks-utility/> ;
     skos:prefLabel "Custom Feature" ;
-    skos:topConceptOf <https://opengeospatial.github.io/bblocks-template/> ;
+    skos:topConceptOf <https://ogcincubator.github.io/bblocks-utility/> ;
     dcat:keyword "examples",
         "feature" ;
     prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
-            prof:hasArtifact <https://opengeospatial.github.io/bblocks-template/build/annotated/bbr/template/myFeature/schema.yaml> ;
+            prof:hasArtifact <https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/template/myFeature/schema.yaml> ;
             prof:hasRole role:schema ],
         [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
             dct:format "application/ld+json" ;
-            prof:hasArtifact <https://opengeospatial.github.io/bblocks-template/build/annotated/bbr/template/myFeature/context.jsonld> ;
+            prof:hasArtifact <https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/template/myFeature/context.jsonld> ;
             prof:hasRole role:mapping ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/json" ;
-            prof:hasArtifact <https://opengeospatial.github.io/bblocks-template/build/annotated/bbr/template/myFeature/schema.json> ;
+            prof:hasArtifact <https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/template/myFeature/schema.json> ;
             prof:hasRole role:schema ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
@@ -55,7 +55,7 @@
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://ogc.bbr.template.mySchema> ;
-            prof:hasArtifact <https://opengeospatial.github.io/bblocks-template/_sources/mySchema/shapes.shacl> ;
+            prof:hasArtifact <https://ogcincubator.github.io/bblocks-utility/_sources/mySchema/shapes.shacl> ;
             prof:hasRole role:validation ] ;
     bblocks:dependsOn <bblocks://ogc.bbr.template.mySchema>,
         <bblocks://ogc.geo.features.feature> ;
@@ -66,20 +66,20 @@
 
 <https://example.com/sources/1> rdfs:label "Sample source document" .
 
-<https://opengeospatial.github.io/bblocks-template/build/bblocks.ttl> a prov:Entity ;
+<https://ogcincubator.github.io/bblocks-utility/build/bblocks.ttl> a prov:Entity ;
     dct:format "text/turtle" ;
-    prov:wasAttributedTo _:N9e9ccc65c76441ceaeed171c5748f805 ;
+    prov:wasAttributedTo _:N9cf5db18567d44e0aa58c62483a75c9a ;
     prov:wasGeneratedBy [ a prov:Activity ;
-            prov:endedAtTime "2026-05-07T11:37:22.848261"^^xsd:dateTime ;
-            prov:startedAtTime "2026-05-07T11:37:22.650139"^^xsd:dateTime ;
+            prov:endedAtTime "2026-06-16T16:44:29.922710"^^xsd:dateTime ;
+            prov:startedAtTime "2026-06-16T16:44:29.748533"^^xsd:dateTime ;
             prov:used [ a prov:Entity ;
-                    dct:format "application/yaml" ;
-                    rdfs:seeAlso <file:///src/ogc/bblocks/register-context.yaml> ],
-                [ a prov:Entity ;
                     dct:format "application/json" ;
-                    dct:hasVersion "git:9b7d95390a30fead2bf9fc1d55d5e6a660580737" ;
-                    rdfs:seeAlso <https://opengeospatial.github.io/bblocks-template/build/register.json> ] ;
-            prov:wasAssociatedWith _:N9e9ccc65c76441ceaeed171c5748f805 ] .
+                    dct:hasVersion "git:60f373a1b0fdc175d77d965af30c791d1b8de461" ;
+                    rdfs:seeAlso <https://ogcincubator.github.io/bblocks-utility/build/register.json> ],
+                [ a prov:Entity ;
+                    dct:format "application/yaml" ;
+                    rdfs:seeAlso <file:///src/ogc/bblocks/register-context.yaml> ] ;
+            prov:wasAssociatedWith _:N9cf5db18567d44e0aa58c62483a75c9a ] .
 
 <bblocks://ogc.bbr.template.mySchema> a skos:Concept,
         dcat:Dataset,
@@ -89,40 +89,40 @@
     dct:abstract "An example schema defining the set of properties of any type of object."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2023-04-05T00:00:00+00:00"^^xsd:dateTime ;
     dct:description [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://opengeospatial.github.io/bblocks-template/build/generateddocs/json-full/bbr/template/mySchema/index.json> ],
+            rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-utility/build/generateddocs/json-full/bbr/template/mySchema/index.json> ],
         [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://opengeospatial.github.io/bblocks-template/build/generateddocs/markdown/bbr/template/mySchema/index.md> ],
+            rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-utility/build/generateddocs/markdown/bbr/template/mySchema/index.md> ],
         [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://opengeospatial.github.io/bblocks-template/bblock/ogc.bbr.template.mySchema> ] ;
+            rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-utility/bblock/ogc.bbr.template.mySchema> ] ;
     dct:hasVersion "0.1" ;
     dct:modified "2023-04-05"^^xsd:date ;
     dct:source <https://example.com/sources/1> ;
-    skos:inScheme <https://opengeospatial.github.io/bblocks-template/> ;
+    skos:inScheme <https://ogcincubator.github.io/bblocks-utility/> ;
     skos:prefLabel "My Schema" ;
-    skos:topConceptOf <https://opengeospatial.github.io/bblocks-template/> ;
+    skos:topConceptOf <https://ogcincubator.github.io/bblocks-utility/> ;
     dcat:keyword "templates" ;
     prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://opengeospatial.github.io/bblocks-template/build/annotated/bbr/template/mySchema/schema.json> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/template/mySchema/schema.yaml> ;
             prof:hasRole role:schema ],
         [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
             dct:format "application/ld+json" ;
-            prof:hasArtifact <https://opengeospatial.github.io/bblocks-template/build/annotated/bbr/template/mySchema/context.jsonld> ;
+            prof:hasArtifact <https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/template/mySchema/context.jsonld> ;
             prof:hasRole role:mapping ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/yaml" ;
-            prof:hasArtifact <https://opengeospatial.github.io/bblocks-template/build/annotated/bbr/template/mySchema/schema.yaml> ;
-            prof:hasRole role:schema ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://ogc.bbr.template.mySchema> ;
-            prof:hasArtifact <https://opengeospatial.github.io/bblocks-template/_sources/mySchema/shapes.shacl> ;
-            prof:hasRole role:validation ] ;
-    bblocks:hasSourceJsonLdContext <https://opengeospatial.github.io/bblocks-template/_sources/mySchema/context.jsonld> ;
+            prof:hasArtifact <https://ogcincubator.github.io/bblocks-utility/_sources/mySchema/shapes.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/template/mySchema/schema.json> ;
+            prof:hasRole role:schema ] ;
+    bblocks:hasSourceJsonLdContext <https://ogcincubator.github.io/bblocks-utility/_sources/mySchema/context.jsonld> ;
     bblocks:status <http://www.opengis.net/def/status/under-development> ;
     bblocks:validationPassed true .
 
-<https://opengeospatial.github.io/bblocks-template/> a skos:ConceptScheme,
+<https://ogcincubator.github.io/bblocks-utility/> a skos:ConceptScheme,
         dcat:Catalog,
         bblocks:BBlocksRegister ;
     rdfs:label "Building Blocks - My OGC Building Blocks repository" ;
@@ -132,29 +132,29 @@ A "Tell me more" link will appear if there is an additional description with a l
     dct:description """The description can be longer. Both **the abstract** *and the description* support Markdown,
 including [links](https://google.es).
 """^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
-    dct:modified "2026-05-07T11:37:21.546445"^^xsd:dateTime ;
+    dct:modified "2026-06-16T16:44:28.687380"^^xsd:dateTime ;
     owl:imports <https://opengeospatial.github.io/bblocks/register.json> ;
     skos:hasTopConcept <bblocks://ogc.bbr.template.myFeature>,
         <bblocks://ogc.bbr.template.mySchema> ;
     skos:prefLabel "Building Blocks - My OGC Building Blocks repository" ;
     prof:hasResource [ rdfs:label "This Building Blocks Register in JSON format" ;
             dct:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/self> ;
-            ns2:hasTarget <https://opengeospatial.github.io/bblocks-template/build/register.json> ],
+            ns2:relation <http://www.iana.org/assignments/relation/self> ;
+            ns1:hasTarget <https://ogcincubator.github.io/bblocks-utility/build/register.json> ],
         [ rdfs:label "This Building Blocks Register in JSON-LD format" ;
             dct:type "application/ld+json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/self> ;
-            ns2:hasTarget <https://opengeospatial.github.io/bblocks-template/build/bblocks.jsonld> ],
+            ns2:relation <http://www.iana.org/assignments/relation/self> ;
+            ns1:hasTarget <https://ogcincubator.github.io/bblocks-utility/build/bblocks.jsonld> ],
         [ rdfs:label "This Building Blocks Register in RDF Turtle format" ;
             dct:type "text/turtle" ;
-            ns1:relation <http://www.iana.org/assignments/relation/self> ;
-            ns2:hasTarget <https://opengeospatial.github.io/bblocks-template/build/bblocks.ttl> ] ;
-    foaf:homepage <https://opengeospatial.github.io/bblocks-template/> ;
-    bblocks:hasValidationReport <https://opengeospatial.github.io/bblocks-template/build/tests/report.html> .
+            ns2:relation <http://www.iana.org/assignments/relation/self> ;
+            ns1:hasTarget <https://ogcincubator.github.io/bblocks-utility/build/bblocks.ttl> ] ;
+    foaf:homepage <https://ogcincubator.github.io/bblocks-utility/> ;
+    bblocks:hasValidationReport <https://ogcincubator.github.io/bblocks-utility/build/tests/report.html> .
 
-_:N9e9ccc65c76441ceaeed171c5748f805 a prov:Agent,
+_:N9cf5db18567d44e0aa58c62483a75c9a a prov:Agent,
         schema:SoftwareApplication ;
     rdfs:label "OGC-NA tools" ;
-    dct:hasVersion "0.5.28" ;
+    dct:hasVersion "0.5.31" ;
     rdfs:seeAlso <https://github.com/opengeospatial/ogc-na-tools> .
 

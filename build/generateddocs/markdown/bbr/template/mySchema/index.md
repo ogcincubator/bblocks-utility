@@ -40,7 +40,7 @@ In **Markdown** format.
     {
       "mynamespace": "http://example.com/mythings/"
     },
-    "https://opengeospatial.github.io/bblocks-template/build/annotated/bbr/template/mySchema/context.jsonld"
+    "https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/template/mySchema/context.jsonld"
   ],
   "a": "mynamespace:aThing",
   "b": 23,
@@ -104,8 +104,8 @@ required:
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://opengeospatial.github.io/bblocks-template/build/annotated/bbr/template/mySchema/schema.json)
-* JSON version: [schema.json](https://opengeospatial.github.io/bblocks-template/build/annotated/bbr/template/mySchema/schema.yaml)
+* YAML version: [schema.yaml](https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/template/mySchema/schema.json)
+* JSON version: [schema.json](https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/template/mySchema/schema.yaml)
 
 
 # JSON-LD Context
@@ -122,7 +122,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://opengeospatial.github.io/bblocks-template/build/annotated/bbr/template/mySchema/context.jsonld)
+[context.jsonld](https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/template/mySchema/context.jsonld)
 
 ## Sources
 
@@ -132,6 +132,6 @@ You can find the full JSON-LD context here:
 
 The source code for this Building Block can be found in the following repository:
 
-* URL: [https://github.com/opengeospatial/bblocks-template](https://github.com/opengeospatial/bblocks-template)
+* URL: [https://github.com/ogcincubator/bblocks-utility](https://github.com/ogcincubator/bblocks-utility)
 * Path: `_sources/mySchema`
 

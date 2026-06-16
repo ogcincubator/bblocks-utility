@@ -1,5 +1,5 @@
 {
-  "@context": "https://opengeospatial.github.io/bblocks-template/build/annotated/bbr/template/myFeature/context.jsonld",
+  "@context": "https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/template/myFeature/context.jsonld",
   "id": "f1",
   "type": "Feature",
   "geometry": {
