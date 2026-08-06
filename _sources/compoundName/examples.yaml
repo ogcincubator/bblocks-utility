@@ -10,7 +10,11 @@
 - title: Referenced Parts
   content: |-
    An example name where part of the name is a reference to a vocabulary source.  This can us used for validation and multi-linual applications
+  prefixes:
+    nametype: http://www.example.com/nametypes/
+    namerefs: http://www.example.com/namerefs/
   snippets:
     - language: json
+
       ref: examples/coderefs.json
       base-uri: http://www.example.com/namedobjects/

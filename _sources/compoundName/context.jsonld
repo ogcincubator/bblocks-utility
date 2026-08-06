@@ -1,15 +1,25 @@
 {
-    "commonpatterns": "https://w3id.org/ogc/utils/label/",
-    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "dct": "http://purl.org/dc/terms/",
-    "type":  "commonpatterns:namePartType",
-    "ref": "commonpatterns:namePartRef",
-    "hasPart": "dct:hasPart",
-    "label": {
-      "@id": "rdfs:label"
-    },
-    "name": {
-      "@id": "commonpatterns:name"
-    },
-    "CompoundName": "commonpatterns:CompoundName"
-  }
+  "commonpatterns": "https://w3id.org/ogc/utils/label/",
+  "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+  "dct": "http://purl.org/dc/terms/",
+  "hasPart": {
+    "@id": "dct:hasPart",
+    "@context": {
+      "type": {
+        "@type": "@id",
+        "@id": "commonpatterns:namePartType"
+      },
+      "ref": {
+        "@type": "@id",
+        "@id": "commonpatterns:namePartRef"
+      }
+    }
+  },
+  "label": {
+    "@id": "rdfs:label"
+  },
+  "name": {
+    "@id": "commonpatterns:name"
+  },
+  "CompoundName": "commonpatterns:CompoundName"
+}
