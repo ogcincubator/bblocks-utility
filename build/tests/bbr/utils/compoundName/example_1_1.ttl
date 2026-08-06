@@ -4,7 +4,7 @@
 
 [] rdfs:label "IS II - DP 3333" ;
     dcterms:hasPart [ rdfs:label "IS II" ;
-            commonpatterns:namePartType "Stamp" ],
+            commonpatterns:namePartType <http://www.example.com/namedobjects/Stamp> ],
         [ rdfs:label "DP 3333" ;
-            commonpatterns:namePartType "Source" ] .
+            commonpatterns:namePartType <http://www.example.com/namedobjects/Source> ] .
 

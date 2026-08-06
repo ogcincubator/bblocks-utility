@@ -1,11 +1,13 @@
 @prefix commonpatterns: <https://w3id.org/ogc/utils/label/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix namerefs: <http://www.example.com/namerefs/> .
+@prefix nametype: <http://www.example.com/nametypes/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 [] rdfs:label "IS II - DP 3333" ;
-    dcterms:hasPart [ rdfs:label "IS II" ;
-            commonpatterns:namePartType "Stamp" ],
-        [ rdfs:label "DP 3333" ;
-            commonpatterns:namePartRef "wa-plan-register:dp333" ;
-            commonpatterns:namePartType "wa-plan:planTypes" ] .
+    dcterms:hasPart [ rdfs:label "DP 3333" ;
+            commonpatterns:namePartRef namerefs:dp333 ;
+            commonpatterns:namePartType nametype:planTypes ],
+        [ rdfs:label "IS II" ;
+            commonpatterns:namePartType <http://www.example.com/namedobjects/Stamp> ] .
 

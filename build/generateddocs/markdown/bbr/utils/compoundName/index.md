@@ -15,7 +15,6 @@ A name with a label, but also a set of parts with roles that can be validated ag
 ```json
 {
     "id": "CompoundNameExample",
-    "type": "CompoundName",
     "label": "IS II - DP 3333",
     "comment": "note: label may be absent or subject to rules regarding presence of parts",
     "hasPart": [
@@ -36,7 +35,6 @@ A name with a label, but also a set of parts with roles that can be validated ag
 {
   "@context": "https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/utils/compoundName/context.jsonld",
   "id": "CompoundNameExample",
-  "type": "CompoundName",
   "label": "IS II - DP 3333",
   "comment": "note: label may be absent or subject to rules regarding presence of parts",
   "hasPart": [
@@ -60,9 +58,9 @@ A name with a label, but also a set of parts with roles that can be validated ag
 
 [] rdfs:label "IS II - DP 3333" ;
     dcterms:hasPart [ rdfs:label "IS II" ;
-            commonpatterns:namePartType "Stamp" ],
+            commonpatterns:namePartType <http://www.example.com/namedobjects/Stamp> ],
         [ rdfs:label "DP 3333" ;
-            commonpatterns:namePartType "Source" ] .
+            commonpatterns:namePartType <http://www.example.com/namedobjects/Source> ] .
 
 
 ```
@@ -74,13 +72,12 @@ An example name where part of the name is a reference to a vocabulary source.  T
 ```json
 {
     "id": "CompoundNameExample",
-    "type": "CompoundName",
     "label": "IS II - DP 3333",
     "comment": "the label of the part is optional - but can be cross checked",
     "hasPart": [
         {
-            "type": "wa-plan:planTypes",
-            "ref": "wa-plan-register:dp333",
+            "type": "nametype:planTypes",
+            "ref": "namerefs:dp333",
             "label": "DP 3333"
         },
         {
@@ -94,15 +91,20 @@ An example name where part of the name is a reference to a vocabulary source.  T
 #### jsonld
 ```jsonld
 {
-  "@context": "https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/utils/compoundName/context.jsonld",
+  "@context": [
+    {
+      "nametype": "http://www.example.com/nametypes/",
+      "namerefs": "http://www.example.com/namerefs/"
+    },
+    "https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/utils/compoundName/context.jsonld"
+  ],
   "id": "CompoundNameExample",
-  "type": "CompoundName",
   "label": "IS II - DP 3333",
   "comment": "the label of the part is optional - but can be cross checked",
   "hasPart": [
     {
-      "type": "wa-plan:planTypes",
-      "ref": "wa-plan-register:dp333",
+      "type": "nametype:planTypes",
+      "ref": "namerefs:dp333",
       "label": "DP 3333"
     },
     {
@@ -117,14 +119,16 @@ An example name where part of the name is a reference to a vocabulary source.  T
 ```ttl
 @prefix commonpatterns: <https://w3id.org/ogc/utils/label/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix namerefs: <http://www.example.com/namerefs/> .
+@prefix nametype: <http://www.example.com/nametypes/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 [] rdfs:label "IS II - DP 3333" ;
-    dcterms:hasPart [ rdfs:label "IS II" ;
-            commonpatterns:namePartType "Stamp" ],
-        [ rdfs:label "DP 3333" ;
-            commonpatterns:namePartRef "wa-plan-register:dp333" ;
-            commonpatterns:namePartType "wa-plan:planTypes" ] .
+    dcterms:hasPart [ rdfs:label "DP 3333" ;
+            commonpatterns:namePartRef namerefs:dp333 ;
+            commonpatterns:namePartType nametype:planTypes ],
+        [ rdfs:label "IS II" ;
+            commonpatterns:namePartType <http://www.example.com/namedobjects/Stamp> ] .
 
 
 ```
@@ -159,9 +163,11 @@ properties:
           x-jsonld-id: http://www.w3.org/2000/01/rdf-schema#label
         ref:
           $ref: https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/iri-or-curie/schema.yaml
+          x-jsonld-type: '@id'
           x-jsonld-id: https://w3id.org/ogc/utils/label/namePartRef
         type:
           $ref: https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/iri-or-curie/schema.yaml
+          x-jsonld-type: '@id'
           x-jsonld-id: https://w3id.org/ogc/utils/label/namePartType
       anyOf:
       - required:
@@ -173,8 +179,8 @@ x-jsonld-extra-terms:
   name: https://w3id.org/ogc/utils/label/name
   CompoundName: https://w3id.org/ogc/utils/label/CompoundName
 x-jsonld-prefixes:
-  commonpatterns: https://w3id.org/ogc/utils/label/
   dct: http://purl.org/dc/terms/
+  commonpatterns: https://w3id.org/ogc/utils/label/
   rdfs: http://www.w3.org/2000/01/rdf-schema#
 
 ```
@@ -195,13 +201,19 @@ Links to the schema:
     "label": "rdfs:label",
     "hasPart": {
       "@context": {
-        "ref": "commonpatterns:namePartRef",
-        "type": "commonpatterns:namePartType"
+        "ref": {
+          "@type": "@id",
+          "@id": "commonpatterns:namePartRef"
+        },
+        "type": {
+          "@type": "@id",
+          "@id": "commonpatterns:namePartType"
+        }
       },
       "@id": "dct:hasPart"
     },
-    "commonpatterns": "https://w3id.org/ogc/utils/label/",
     "dct": "http://purl.org/dc/terms/",
+    "commonpatterns": "https://w3id.org/ogc/utils/label/",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "@version": 1.1
   }
