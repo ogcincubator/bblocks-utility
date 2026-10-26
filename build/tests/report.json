@@ -1,24 +1,749 @@
 {
   "summary": {
-    "total": 1,
-    "passed": 1,
+    "total": 2,
+    "passed": 2,
     "failed": 0,
     "result": true
   },
   "bblocks": {
-    "ogc.bbr.utils.compoundName": {
-      "title": "Validation report for ogc.bbr.utils.compoundName - Compound Name",
+    "ogc.bbr.utils.compoundName.ontology": {
+      "title": "Validation report for ogc.bbr.utils.compoundName.ontology - Compound Name Model",
+      "bblockName": "Compound Name Model",
+      "bblockId": "ogc.bbr.utils.compoundName.ontology",
+      "generated": "2026-10-26T07:44:13.416160+00:00",
+      "result": true,
+      "items": [
+        {
+          "source": {
+            "type": "TEST_RESOURCE",
+            "requireFail": true,
+            "filename": "_sources/compoundName/ontology/tests/empty-part-fail.ttl",
+            "url": "https://ogcincubator.github.io/bblocks-utility/_sources/compoundName/ontology/tests/empty-part-fail.ttl",
+            "language": "ttl"
+          },
+          "result": true,
+          "sections": [
+            {
+              "name": "GENERAL",
+              "title": "General",
+              "entries": [
+                {
+                  "op": "require-fail",
+                  "isError": false,
+                  "message": "Test was expected to fail and it did."
+                }
+              ]
+            },
+            {
+              "name": "FILES",
+              "title": "Files",
+              "entries": [
+                {
+                  "isError": false,
+                  "message": "Using empty-part-fail.ttl from test resources"
+                }
+              ]
+            },
+            {
+              "name": "SHACL",
+              "title": "SHACL",
+              "entries": [
+                {
+                  "isError": false,
+                  "message": "Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):\n - https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_terms.ttl\n - /github/workspace/_sources/compoundName/ontology/ontology.ttl"
+                },
+                {
+                  "op": "shacl-report",
+                  "shaclFile": "_sources/compoundName/ontology/shapes.shacl",
+                  "graph": "@prefix : <https://w3id.org/ogc/utils/label/> .\n@prefix dct: <http://purl.org/dc/terms/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode [ rdfs:label \"IS II\" ;\n                    dct:hasPart [ :namePartType <http://www.example.com/nametypes/Stamp> ] ] ;\n            sh:resultMessage \"Value does not conform to Shape :NamePartShape\" ;\n            sh:resultPath dct:hasPart ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:NodeConstraintComponent ;\n            sh:sourceShape :CompoundName-hasPart ;\n            sh:value [ :namePartType <http://www.example.com/nametypes/Stamp> ] ] .\n\n",
+                  "isError": true,
+                  "message": "Validation result for _sources/compoundName/ontology/shapes.shacl:\n  Validation Report\n  Conforms: False\n  Results (1):\n  Constraint Violation in NodeConstraintComponent (http://www.w3.org/ns/shacl#NodeConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: :CompoundName-hasPart\n  \tFocus Node: [ dct:hasPart [ com:namePartType nametype:Stamp ] ; rdfs:label Literal(\"IS II\") ]\n  \tValue Node: [ com:namePartType nametype:Stamp ]\n  \tResult Path: dct:hasPart\n  \tMessage: Value does not conform to Shape :NamePartShape\n  "
+                },
+                {
+                  "shaclFile": "_sources/compoundName/ontology/shapes.shacl",
+                  "focusNodes": {
+                    ":MeasureShape": {
+                      "nodes": []
+                    },
+                    ":NamePartShape": {
+                      "nodes": []
+                    },
+                    ":CompoundNameShape": {
+                      "nodes": [
+                        "ex:lot1/com:name"
+                      ]
+                    }
+                  },
+                  "isError": false,
+                  "message": "Focus nodes for _sources/compoundName/ontology/shapes.shacl:\n - Shape :MeasureShape: *none*\n - Shape :NamePartShape: *none*\n - Shape :CompoundNameShape: ex:lot1/com:name\n"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "source": {
+            "type": "TEST_RESOURCE",
+            "requireFail": true,
+            "filename": "_sources/compoundName/ontology/tests/measure-without-value-fail.ttl",
+            "url": "https://ogcincubator.github.io/bblocks-utility/_sources/compoundName/ontology/tests/measure-without-value-fail.ttl",
+            "language": "ttl"
+          },
+          "result": true,
+          "sections": [
+            {
+              "name": "GENERAL",
+              "title": "General",
+              "entries": [
+                {
+                  "op": "require-fail",
+                  "isError": false,
+                  "message": "Test was expected to fail and it did."
+                }
+              ]
+            },
+            {
+              "name": "FILES",
+              "title": "Files",
+              "entries": [
+                {
+                  "isError": false,
+                  "message": "Using measure-without-value-fail.ttl from test resources"
+                }
+              ]
+            },
+            {
+              "name": "SHACL",
+              "title": "SHACL",
+              "entries": [
+                {
+                  "isError": false,
+                  "message": "Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):\n - https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_terms.ttl\n - /github/workspace/_sources/compoundName/ontology/ontology.ttl"
+                },
+                {
+                  "op": "shacl-report",
+                  "shaclFile": "_sources/compoundName/ontology/shapes.shacl",
+                  "graph": "@prefix : <https://w3id.org/ogc/utils/label/> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode <http://www.example.com/measures/m1> ;\n            sh:resultMessage \"Less than 1 values on ex:m1->:value\" ;\n            sh:resultPath :value ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape [ sh:datatype xsd:decimal ;\n                    sh:maxCount 1 ;\n                    sh:minCount 1 ;\n                    sh:path :value ] ] .\n\n",
+                  "isError": true,
+                  "message": "Validation result for _sources/compoundName/ontology/shapes.shacl:\n  Validation Report\n  Conforms: False\n  Results (1):\n  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: [ sh:datatype xsd:decimal ; sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path :value ]\n  \tFocus Node: ex:m1\n  \tResult Path: :value\n  \tMessage: Less than 1 values on ex:m1->:value\n  "
+                },
+                {
+                  "shaclFile": "_sources/compoundName/ontology/shapes.shacl",
+                  "focusNodes": {
+                    ":MeasureShape": {
+                      "nodes": [
+                        "ex:m1"
+                      ]
+                    },
+                    ":NamePartShape": {
+                      "nodes": []
+                    },
+                    ":CompoundNameShape": {
+                      "nodes": []
+                    }
+                  },
+                  "isError": false,
+                  "message": "Focus nodes for _sources/compoundName/ontology/shapes.shacl:\n - Shape :MeasureShape: ex:m1\n - Shape :NamePartShape: *none*\n - Shape :CompoundNameShape: *none*\n"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "source": {
+            "type": "TEST_RESOURCE",
+            "requireFail": true,
+            "filename": "_sources/compoundName/ontology/tests/part-not-in-label-fail.ttl",
+            "url": "https://ogcincubator.github.io/bblocks-utility/_sources/compoundName/ontology/tests/part-not-in-label-fail.ttl",
+            "language": "ttl"
+          },
+          "result": true,
+          "sections": [
+            {
+              "name": "GENERAL",
+              "title": "General",
+              "entries": [
+                {
+                  "op": "require-fail",
+                  "isError": false,
+                  "message": "Test was expected to fail and it did."
+                }
+              ]
+            },
+            {
+              "name": "FILES",
+              "title": "Files",
+              "entries": [
+                {
+                  "isError": false,
+                  "message": "Using part-not-in-label-fail.ttl from test resources"
+                }
+              ]
+            },
+            {
+              "name": "SHACL",
+              "title": "SHACL",
+              "entries": [
+                {
+                  "isError": false,
+                  "message": "Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):\n - https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_terms.ttl\n - /github/workspace/_sources/compoundName/ontology/ontology.ttl"
+                },
+                {
+                  "op": "shacl-report",
+                  "shaclFile": "_sources/compoundName/ontology/shapes.shacl",
+                  "graph": "@prefix : <https://w3id.org/ogc/utils/label/> .\n@prefix dct: <http://purl.org/dc/terms/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode [ rdfs:label \"IS II - DP 3333\" ;\n                    dct:hasPart [ rdfs:label \"IS II\" ],\n                        [ rdfs:label \"DP 4444\" ] ] ;\n            sh:resultMessage \"Name parts must exist in label if present\" ;\n            sh:resultPath rdfs:label ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraint [ sh:message \"Name parts must exist in label if present\" ;\n                    sh:prefixes :prefixes ;\n                    sh:select \"\"\"\n        SELECT $this (rdfs:label AS ?path) ?value\n        WHERE {\n          $this dct:hasPart ?p .\n          $this rdfs:label ?label .\n          ?p rdfs:label ?value\n          FILTER ( ! CONTAINS( LCASE(?label), LCASE(?value)) )\n        }\n        \"\"\" ] ;\n            sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;\n            sh:sourceShape :CompoundName-partsInLabel ;\n            sh:value \"DP 4444\" ] .\n\n",
+                  "isError": true,
+                  "message": "Validation result for _sources/compoundName/ontology/shapes.shacl:\n  Validation Report\n  Conforms: False\n  Results (1):\n  Constraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: :CompoundName-partsInLabel\n  \tFocus Node: [ dct:hasPart [ rdfs:label Literal(\"DP 4444\") ], [ rdfs:label Literal(\"IS II\") ] ; rdfs:label Literal(\"IS II - DP 3333\") ]\n  \tValue Node: Literal(\"DP 4444\")\n  \tResult Path: rdfs:label\n  \tSource Constraint: [ sh:message Literal(\"Name parts must exist in label if present\") ; sh:prefixes :prefixes ; sh:select Literal(\"\n          SELECT $this (rdfs:label AS ?path) ?value\n          WHERE {\n            $this dct:hasPart ?p .\n            $this rdfs:label ?label .\n            ?p rdfs:label ?value\n            FILTER ( ! CONTAINS( LCASE(?label), LCASE(?value)) )\n          }\n          \") ]\n  \tMessage: Name parts must exist in label if present\n  "
+                },
+                {
+                  "shaclFile": "_sources/compoundName/ontology/shapes.shacl",
+                  "focusNodes": {
+                    ":MeasureShape": {
+                      "nodes": []
+                    },
+                    ":NamePartShape": {
+                      "nodes": []
+                    },
+                    ":CompoundNameShape": {
+                      "nodes": [
+                        "ex:lot1/com:name"
+                      ]
+                    }
+                  },
+                  "isError": false,
+                  "message": "Focus nodes for _sources/compoundName/ontology/shapes.shacl:\n - Shape :MeasureShape: *none*\n - Shape :NamePartShape: *none*\n - Shape :CompoundNameShape: ex:lot1/com:name\n"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "source": {
+            "type": "TEST_RESOURCE",
+            "requireFail": true,
+            "filename": "_sources/compoundName/ontology/tests/subclass-part-not-in-label-fail.ttl",
+            "url": "https://ogcincubator.github.io/bblocks-utility/_sources/compoundName/ontology/tests/subclass-part-not-in-label-fail.ttl",
+            "language": "ttl"
+          },
+          "result": true,
+          "sections": [
+            {
+              "name": "GENERAL",
+              "title": "General",
+              "entries": [
+                {
+                  "op": "require-fail",
+                  "isError": false,
+                  "message": "Test was expected to fail and it did."
+                }
+              ]
+            },
+            {
+              "name": "FILES",
+              "title": "Files",
+              "entries": [
+                {
+                  "isError": false,
+                  "message": "Using subclass-part-not-in-label-fail.ttl from test resources"
+                }
+              ]
+            },
+            {
+              "name": "SHACL",
+              "title": "SHACL",
+              "entries": [
+                {
+                  "isError": false,
+                  "message": "Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):\n - https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_terms.ttl\n - /github/workspace/_sources/compoundName/ontology/ontology.ttl"
+                },
+                {
+                  "op": "shacl-report",
+                  "shaclFile": "_sources/compoundName/ontology/shapes.shacl",
+                  "graph": "@prefix : <https://w3id.org/ogc/utils/label/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode <http://www.example.com/namedobjects/plan1> ;\n            sh:resultMessage \"Name parts must exist in label if present\" ;\n            sh:resultPath rdfs:label ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraint [ sh:message \"Name parts must exist in label if present\" ;\n                    sh:prefixes :prefixes ;\n                    sh:select \"\"\"\n        SELECT $this (rdfs:label AS ?path) ?value\n        WHERE {\n          $this dct:hasPart ?p .\n          $this rdfs:label ?label .\n          ?p rdfs:label ?value\n          FILTER ( ! CONTAINS( LCASE(?label), LCASE(?value)) )\n        }\n        \"\"\" ] ;\n            sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;\n            sh:sourceShape :CompoundName-partsInLabel ;\n            sh:value \"DP 4444\" ] .\n\n",
+                  "isError": true,
+                  "message": "Validation result for _sources/compoundName/ontology/shapes.shacl:\n  Validation Report\n  Conforms: False\n  Results (1):\n  Constraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: :CompoundName-partsInLabel\n  \tFocus Node: ex:plan1\n  \tValue Node: Literal(\"DP 4444\")\n  \tResult Path: rdfs:label\n  \tSource Constraint: [ sh:message Literal(\"Name parts must exist in label if present\") ; sh:prefixes :prefixes ; sh:select Literal(\"\n          SELECT $this (rdfs:label AS ?path) ?value\n          WHERE {\n            $this dct:hasPart ?p .\n            $this rdfs:label ?label .\n            ?p rdfs:label ?value\n            FILTER ( ! CONTAINS( LCASE(?label), LCASE(?value)) )\n          }\n          \") ]\n  \tMessage: Name parts must exist in label if present\n  "
+                },
+                {
+                  "shaclFile": "_sources/compoundName/ontology/shapes.shacl",
+                  "focusNodes": {
+                    ":MeasureShape": {
+                      "nodes": []
+                    },
+                    ":NamePartShape": {
+                      "nodes": []
+                    },
+                    ":CompoundNameShape": {
+                      "nodes": [
+                        "ex:plan1"
+                      ]
+                    }
+                  },
+                  "isError": false,
+                  "message": "Focus nodes for _sources/compoundName/ontology/shapes.shacl:\n - Shape :MeasureShape: *none*\n - Shape :NamePartShape: *none*\n - Shape :CompoundNameShape: ex:plan1\n"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "source": {
+            "type": "TEST_RESOURCE",
+            "requireFail": true,
+            "filename": "_sources/compoundName/ontology/tests/subproperty-chain-empty-part-fail.ttl",
+            "url": "https://ogcincubator.github.io/bblocks-utility/_sources/compoundName/ontology/tests/subproperty-chain-empty-part-fail.ttl",
+            "language": "ttl"
+          },
+          "result": true,
+          "sections": [
+            {
+              "name": "GENERAL",
+              "title": "General",
+              "entries": [
+                {
+                  "op": "require-fail",
+                  "isError": false,
+                  "message": "Test was expected to fail and it did."
+                }
+              ]
+            },
+            {
+              "name": "FILES",
+              "title": "Files",
+              "entries": [
+                {
+                  "isError": false,
+                  "message": "Using subproperty-chain-empty-part-fail.ttl from test resources"
+                }
+              ]
+            },
+            {
+              "name": "SHACL",
+              "title": "SHACL",
+              "entries": [
+                {
+                  "isError": false,
+                  "message": "Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):\n - https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_terms.ttl\n - /github/workspace/_sources/compoundName/ontology/ontology.ttl"
+                },
+                {
+                  "op": "shacl-report",
+                  "shaclFile": "_sources/compoundName/ontology/shapes.shacl",
+                  "graph": "@prefix : <https://w3id.org/ogc/utils/label/> .\n@prefix dct: <http://purl.org/dc/terms/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode [ rdfs:label \"IS II\" ;\n                    dct:hasPart [ :namePartType <http://www.example.com/nametypes/Stamp> ] ] ;\n            sh:resultMessage \"Value does not conform to Shape :NamePartShape\" ;\n            sh:resultPath dct:hasPart ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:NodeConstraintComponent ;\n            sh:sourceShape :CompoundName-hasPart ;\n            sh:value [ :namePartType <http://www.example.com/nametypes/Stamp> ] ] .\n\n",
+                  "isError": true,
+                  "message": "Validation result for _sources/compoundName/ontology/shapes.shacl:\n  Validation Report\n  Conforms: False\n  Results (1):\n  Constraint Violation in NodeConstraintComponent (http://www.w3.org/ns/shacl#NodeConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: :CompoundName-hasPart\n  \tFocus Node: [ dct:hasPart [ com:namePartType nametype:Stamp ] ; rdfs:label Literal(\"IS II\") ]\n  \tValue Node: [ com:namePartType nametype:Stamp ]\n  \tResult Path: dct:hasPart\n  \tMessage: Value does not conform to Shape :NamePartShape\n  "
+                },
+                {
+                  "shaclFile": "_sources/compoundName/ontology/shapes.shacl",
+                  "focusNodes": {
+                    ":MeasureShape": {
+                      "nodes": []
+                    },
+                    ":NamePartShape": {
+                      "nodes": []
+                    },
+                    ":CompoundNameShape": {
+                      "nodes": []
+                    }
+                  },
+                  "isError": false,
+                  "message": "Focus nodes for _sources/compoundName/ontology/shapes.shacl:\n - Shape :MeasureShape: *none*\n - Shape :NamePartShape: *none*\n - Shape :CompoundNameShape: *none*\n"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "source": {
+            "type": "TEST_RESOURCE",
+            "requireFail": true,
+            "filename": "_sources/compoundName/ontology/tests/subproperty-part-not-in-label-fail.ttl",
+            "url": "https://ogcincubator.github.io/bblocks-utility/_sources/compoundName/ontology/tests/subproperty-part-not-in-label-fail.ttl",
+            "language": "ttl"
+          },
+          "result": true,
+          "sections": [
+            {
+              "name": "GENERAL",
+              "title": "General",
+              "entries": [
+                {
+                  "op": "require-fail",
+                  "isError": false,
+                  "message": "Test was expected to fail and it did."
+                }
+              ]
+            },
+            {
+              "name": "FILES",
+              "title": "Files",
+              "entries": [
+                {
+                  "isError": false,
+                  "message": "Using subproperty-part-not-in-label-fail.ttl from test resources"
+                }
+              ]
+            },
+            {
+              "name": "SHACL",
+              "title": "SHACL",
+              "entries": [
+                {
+                  "isError": false,
+                  "message": "Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):\n - https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_terms.ttl\n - /github/workspace/_sources/compoundName/ontology/ontology.ttl"
+                },
+                {
+                  "op": "shacl-report",
+                  "shaclFile": "_sources/compoundName/ontology/shapes.shacl",
+                  "graph": "@prefix : <https://w3id.org/ogc/utils/label/> .\n@prefix dct: <http://purl.org/dc/terms/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode [ rdfs:label \"IS II - DP 3333\" ;\n                    dct:hasPart [ rdfs:label \"DP 4444\" ],\n                        [ rdfs:label \"IS II\" ] ] ;\n            sh:resultMessage \"Name parts must exist in label if present\" ;\n            sh:resultPath rdfs:label ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraint [ sh:message \"Name parts must exist in label if present\" ;\n                    sh:prefixes :prefixes ;\n                    sh:select \"\"\"\n        SELECT $this (rdfs:label AS ?path) ?value\n        WHERE {\n          $this dct:hasPart ?p .\n          $this rdfs:label ?label .\n          ?p rdfs:label ?value\n          FILTER ( ! CONTAINS( LCASE(?label), LCASE(?value)) )\n        }\n        \"\"\" ] ;\n            sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;\n            sh:sourceShape :CompoundName-partsInLabel ;\n            sh:value \"DP 4444\" ] .\n\n",
+                  "isError": true,
+                  "message": "Validation result for _sources/compoundName/ontology/shapes.shacl:\n  Validation Report\n  Conforms: False\n  Results (1):\n  Constraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: :CompoundName-partsInLabel\n  \tFocus Node: [ dct:hasPart [ rdfs:label Literal(\"DP 4444\") ], [ rdfs:label Literal(\"IS II\") ] ; rdfs:label Literal(\"IS II - DP 3333\") ]\n  \tValue Node: Literal(\"DP 4444\")\n  \tResult Path: rdfs:label\n  \tSource Constraint: [ sh:message Literal(\"Name parts must exist in label if present\") ; sh:prefixes :prefixes ; sh:select Literal(\"\n          SELECT $this (rdfs:label AS ?path) ?value\n          WHERE {\n            $this dct:hasPart ?p .\n            $this rdfs:label ?label .\n            ?p rdfs:label ?value\n            FILTER ( ! CONTAINS( LCASE(?label), LCASE(?value)) )\n          }\n          \") ]\n  \tMessage: Name parts must exist in label if present\n  "
+                },
+                {
+                  "shaclFile": "_sources/compoundName/ontology/shapes.shacl",
+                  "focusNodes": {
+                    ":MeasureShape": {
+                      "nodes": []
+                    },
+                    ":NamePartShape": {
+                      "nodes": []
+                    },
+                    ":CompoundNameShape": {
+                      "nodes": []
+                    }
+                  },
+                  "isError": false,
+                  "message": "Focus nodes for _sources/compoundName/ontology/shapes.shacl:\n - Shape :MeasureShape: *none*\n - Shape :NamePartShape: *none*\n - Shape :CompoundNameShape: *none*\n"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "source": {
+            "type": "EXAMPLE",
+            "requireFail": false,
+            "filename": "build/tests/bbr/utils/compoundName/ontology/compound-name.ttl",
+            "url": "https://ogcincubator.github.io/bblocks-utility/build/tests/bbr/utils/compoundName/ontology/compound-name.ttl",
+            "exampleIndex": 1,
+            "snippetIndex": 1,
+            "language": "text/turtle"
+          },
+          "result": true,
+          "sections": [
+            {
+              "name": "FILES",
+              "title": "Files",
+              "entries": [
+                {
+                  "isError": false,
+                  "message": "Using example_1_1.ttl from examples"
+                },
+                {
+                  "op": "ttl-create",
+                  "empty": false,
+                  "filename": "compound-name.ttl",
+                  "size": 10,
+                  "isError": false,
+                  "message": "Output Turtle compound-name.ttl created"
+                }
+              ]
+            },
+            {
+              "name": "TURTLE",
+              "title": "Turtle",
+              "entries": [
+                {
+                  "isError": false,
+                  "message": "Prefixes are defined for com, dct, rdfs, ex, nametype, namerefs"
+                }
+              ]
+            },
+            {
+              "name": "SHACL",
+              "title": "SHACL",
+              "entries": [
+                {
+                  "isError": false,
+                  "message": "Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):\n - https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_terms.ttl\n - /github/workspace/_sources/compoundName/ontology/ontology.ttl"
+                },
+                {
+                  "op": "shacl-report",
+                  "shaclFile": "_sources/compoundName/ontology/shapes.shacl",
+                  "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+                  "isError": false,
+                  "message": "Validation result for _sources/compoundName/ontology/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
+                },
+                {
+                  "shaclFile": "_sources/compoundName/ontology/shapes.shacl",
+                  "focusNodes": {
+                    ":MeasureShape": {
+                      "nodes": []
+                    },
+                    ":NamePartShape": {
+                      "nodes": []
+                    },
+                    ":CompoundNameShape": {
+                      "nodes": [
+                        "ex:lot1/com:name"
+                      ]
+                    }
+                  },
+                  "isError": false,
+                  "message": "Focus nodes for _sources/compoundName/ontology/shapes.shacl:\n - Shape :MeasureShape: *none*\n - Shape :NamePartShape: *none*\n - Shape :CompoundNameShape: ex:lot1/com:name\n"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "source": {
+            "type": "EXAMPLE",
+            "requireFail": false,
+            "filename": "build/tests/bbr/utils/compoundName/ontology/compound-name-subclass.ttl",
+            "url": "https://ogcincubator.github.io/bblocks-utility/build/tests/bbr/utils/compoundName/ontology/compound-name-subclass.ttl",
+            "exampleIndex": 2,
+            "snippetIndex": 1,
+            "language": "text/turtle"
+          },
+          "result": true,
+          "sections": [
+            {
+              "name": "FILES",
+              "title": "Files",
+              "entries": [
+                {
+                  "isError": false,
+                  "message": "Using example_2_1.ttl from examples"
+                },
+                {
+                  "op": "ttl-create",
+                  "empty": false,
+                  "filename": "compound-name-subclass.ttl",
+                  "size": 10,
+                  "isError": false,
+                  "message": "Output Turtle compound-name-subclass.ttl created"
+                }
+              ]
+            },
+            {
+              "name": "TURTLE",
+              "title": "Turtle",
+              "entries": [
+                {
+                  "isError": false,
+                  "message": "Prefixes are defined for com, dct, rdfs, ex, nametype, namerefs"
+                }
+              ]
+            },
+            {
+              "name": "SHACL",
+              "title": "SHACL",
+              "entries": [
+                {
+                  "isError": false,
+                  "message": "Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):\n - https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_terms.ttl\n - /github/workspace/_sources/compoundName/ontology/ontology.ttl"
+                },
+                {
+                  "op": "shacl-report",
+                  "shaclFile": "_sources/compoundName/ontology/shapes.shacl",
+                  "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+                  "isError": false,
+                  "message": "Validation result for _sources/compoundName/ontology/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
+                },
+                {
+                  "shaclFile": "_sources/compoundName/ontology/shapes.shacl",
+                  "focusNodes": {
+                    ":MeasureShape": {
+                      "nodes": []
+                    },
+                    ":NamePartShape": {
+                      "nodes": []
+                    },
+                    ":CompoundNameShape": {
+                      "nodes": [
+                        "ex:plan1"
+                      ]
+                    }
+                  },
+                  "isError": false,
+                  "message": "Focus nodes for _sources/compoundName/ontology/shapes.shacl:\n - Shape :MeasureShape: *none*\n - Shape :NamePartShape: *none*\n - Shape :CompoundNameShape: ex:plan1\n"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "source": {
+            "type": "EXAMPLE",
+            "requireFail": false,
+            "filename": "build/tests/bbr/utils/compoundName/ontology/compound-name-subproperty.ttl",
+            "url": "https://ogcincubator.github.io/bblocks-utility/build/tests/bbr/utils/compoundName/ontology/compound-name-subproperty.ttl",
+            "exampleIndex": 3,
+            "snippetIndex": 1,
+            "language": "text/turtle"
+          },
+          "result": true,
+          "sections": [
+            {
+              "name": "FILES",
+              "title": "Files",
+              "entries": [
+                {
+                  "isError": false,
+                  "message": "Using example_3_1.ttl from examples"
+                },
+                {
+                  "op": "ttl-create",
+                  "empty": false,
+                  "filename": "compound-name-subproperty.ttl",
+                  "size": 11,
+                  "isError": false,
+                  "message": "Output Turtle compound-name-subproperty.ttl created"
+                }
+              ]
+            },
+            {
+              "name": "TURTLE",
+              "title": "Turtle",
+              "entries": [
+                {
+                  "isError": false,
+                  "message": "Prefixes are defined for com, dct, rdfs, ex, nametype, namerefs"
+                }
+              ]
+            },
+            {
+              "name": "SHACL",
+              "title": "SHACL",
+              "entries": [
+                {
+                  "isError": false,
+                  "message": "Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):\n - https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_terms.ttl\n - /github/workspace/_sources/compoundName/ontology/ontology.ttl"
+                },
+                {
+                  "op": "shacl-report",
+                  "shaclFile": "_sources/compoundName/ontology/shapes.shacl",
+                  "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+                  "isError": false,
+                  "message": "Validation result for _sources/compoundName/ontology/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
+                },
+                {
+                  "shaclFile": "_sources/compoundName/ontology/shapes.shacl",
+                  "focusNodes": {
+                    ":MeasureShape": {
+                      "nodes": []
+                    },
+                    ":NamePartShape": {
+                      "nodes": []
+                    },
+                    ":CompoundNameShape": {
+                      "nodes": []
+                    }
+                  },
+                  "isError": false,
+                  "message": "Focus nodes for _sources/compoundName/ontology/shapes.shacl:\n - Shape :MeasureShape: *none*\n - Shape :NamePartShape: *none*\n - Shape :CompoundNameShape: *none*\n"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "source": {
+            "type": "EXAMPLE",
+            "requireFail": false,
+            "filename": "build/tests/bbr/utils/compoundName/ontology/measure.ttl",
+            "url": "https://ogcincubator.github.io/bblocks-utility/build/tests/bbr/utils/compoundName/ontology/measure.ttl",
+            "exampleIndex": 4,
+            "snippetIndex": 1,
+            "language": "text/turtle"
+          },
+          "result": true,
+          "sections": [
+            {
+              "name": "FILES",
+              "title": "Files",
+              "entries": [
+                {
+                  "isError": false,
+                  "message": "Using example_4_1.ttl from examples"
+                },
+                {
+                  "op": "ttl-create",
+                  "empty": false,
+                  "filename": "measure.ttl",
+                  "size": 3,
+                  "isError": false,
+                  "message": "Output Turtle measure.ttl created"
+                }
+              ]
+            },
+            {
+              "name": "TURTLE",
+              "title": "Turtle",
+              "entries": [
+                {
+                  "isError": false,
+                  "message": "Prefixes are defined for com, dct, rdfs, ex, nametype, namerefs"
+                }
+              ]
+            },
+            {
+              "name": "SHACL",
+              "title": "SHACL",
+              "entries": [
+                {
+                  "isError": false,
+                  "message": "Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):\n - https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_terms.ttl\n - /github/workspace/_sources/compoundName/ontology/ontology.ttl"
+                },
+                {
+                  "op": "shacl-report",
+                  "shaclFile": "_sources/compoundName/ontology/shapes.shacl",
+                  "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+                  "isError": false,
+                  "message": "Validation result for _sources/compoundName/ontology/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
+                },
+                {
+                  "shaclFile": "_sources/compoundName/ontology/shapes.shacl",
+                  "focusNodes": {
+                    ":MeasureShape": {
+                      "nodes": [
+                        "ex:m1"
+                      ]
+                    },
+                    ":NamePartShape": {
+                      "nodes": []
+                    },
+                    ":CompoundNameShape": {
+                      "nodes": []
+                    }
+                  },
+                  "isError": false,
+                  "message": "Focus nodes for _sources/compoundName/ontology/shapes.shacl:\n - Shape :MeasureShape: ex:m1\n - Shape :NamePartShape: *none*\n - Shape :CompoundNameShape: *none*\n"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "globalErrors": {},
+      "counts": {
+        "total": 10,
+        "passed": 10,
+        "failed": 0
+      }
+    },
+    "ogc.bbr.utils.compoundName.schema": {
+      "title": "Validation report for ogc.bbr.utils.compoundName.schema - Compound Name",
       "bblockName": "Compound Name",
-      "bblockId": "ogc.bbr.utils.compoundName",
-      "generated": "2026-08-06T06:04:40.154440+00:00",
+      "bblockId": "ogc.bbr.utils.compoundName.schema",
+      "generated": "2026-10-26T07:44:13.898988+00:00",
       "result": true,
       "items": [
         {
           "source": {
             "type": "EXAMPLE",
             "requireFail": false,
-            "filename": "build/tests/bbr/utils/compoundName/example_1_1.json",
-            "url": "https://ogcincubator.github.io/bblocks-utility/build/tests/bbr/utils/compoundName/example_1_1.json",
+            "filename": "build/tests/bbr/utils/compoundName/schema/example_1_1.json",
+            "url": "https://ogcincubator.github.io/bblocks-utility/build/tests/bbr/utils/compoundName/schema/example_1_1.json",
             "exampleIndex": 1,
             "snippetIndex": 1,
             "language": "application/json"
@@ -71,21 +796,31 @@
               "title": "SHACL",
               "entries": [
                 {
-                  "op": "shacl-report",
-                  "shaclFile": "_sources/compoundName/rules.shacl",
-                  "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
                   "isError": false,
-                  "message": "Validation result for _sources/compoundName/rules.shacl:\n  Validation Report\n  Conforms: True\n  "
+                  "message": "Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):\n - https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_terms.ttl\n - /github/workspace/_sources/compoundName/ontology/ontology.ttl"
                 },
                 {
-                  "shaclFile": "_sources/compoundName/rules.shacl",
+                  "op": "shacl-report",
+                  "shaclFile": "_sources/compoundName/ontology/shapes.shacl",
+                  "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+                  "isError": false,
+                  "message": "Validation result for _sources/compoundName/ontology/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
+                },
+                {
+                  "shaclFile": "_sources/compoundName/ontology/shapes.shacl",
                   "focusNodes": {
-                    "_:n39b6c27c56c54f9ca530755c310ed373b1": {
+                    ":MeasureShape": {
+                      "nodes": []
+                    },
+                    ":NamePartShape": {
+                      "nodes": []
+                    },
+                    ":CompoundNameShape": {
                       "nodes": []
                     }
                   },
                   "isError": false,
-                  "message": "Focus nodes for _sources/compoundName/rules.shacl:\n - Shape _:n39b6c27c56c54f9ca530755c310ed373b1: *none*\n"
+                  "message": "Focus nodes for _sources/compoundName/ontology/shapes.shacl:\n - Shape :MeasureShape: *none*\n - Shape :NamePartShape: *none*\n - Shape :CompoundNameShape: *none*\n"
                 }
               ]
             }
@@ -95,8 +830,8 @@
           "source": {
             "type": "EXAMPLE",
             "requireFail": false,
-            "filename": "build/tests/bbr/utils/compoundName/example_2_1.json",
-            "url": "https://ogcincubator.github.io/bblocks-utility/build/tests/bbr/utils/compoundName/example_2_1.json",
+            "filename": "build/tests/bbr/utils/compoundName/schema/example_2_1.json",
+            "url": "https://ogcincubator.github.io/bblocks-utility/build/tests/bbr/utils/compoundName/schema/example_2_1.json",
             "exampleIndex": 2,
             "snippetIndex": 1,
             "language": "application/json"
@@ -149,21 +884,31 @@
               "title": "SHACL",
               "entries": [
                 {
-                  "op": "shacl-report",
-                  "shaclFile": "_sources/compoundName/rules.shacl",
-                  "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
                   "isError": false,
-                  "message": "Validation result for _sources/compoundName/rules.shacl:\n  Validation Report\n  Conforms: True\n  "
+                  "message": "Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):\n - https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_terms.ttl\n - /github/workspace/_sources/compoundName/ontology/ontology.ttl"
                 },
                 {
-                  "shaclFile": "_sources/compoundName/rules.shacl",
+                  "op": "shacl-report",
+                  "shaclFile": "_sources/compoundName/ontology/shapes.shacl",
+                  "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+                  "isError": false,
+                  "message": "Validation result for _sources/compoundName/ontology/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
+                },
+                {
+                  "shaclFile": "_sources/compoundName/ontology/shapes.shacl",
                   "focusNodes": {
-                    "_:n39b6c27c56c54f9ca530755c310ed373b1": {
+                    ":MeasureShape": {
+                      "nodes": []
+                    },
+                    ":NamePartShape": {
+                      "nodes": []
+                    },
+                    ":CompoundNameShape": {
                       "nodes": []
                     }
                   },
                   "isError": false,
-                  "message": "Focus nodes for _sources/compoundName/rules.shacl:\n - Shape _:n39b6c27c56c54f9ca530755c310ed373b1: *none*\n"
+                  "message": "Focus nodes for _sources/compoundName/ontology/shapes.shacl:\n - Shape :MeasureShape: *none*\n - Shape :NamePartShape: *none*\n - Shape :CompoundNameShape: *none*\n"
                 }
               ]
             }

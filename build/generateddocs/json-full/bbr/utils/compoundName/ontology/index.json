@@ -1,0 +1,129 @@
+
+
+{
+  "itemIdentifier": "ogc.bbr.utils.compoundName.ontology",
+  "name": "Compound Name Model",
+  "highlighted": true,
+  "abstract": "Ontology and SHACL rules for common implementation patterns not directly supported by other standards: compound names and name parts, qualified measures, jurisdictional codelists and reports.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-10-26T00:00:00Z",
+  "itemClass": "model",
+  "version": "0.1",
+  "concept": [
+    "https://w3id.org/ogc/utils/label"
+  ],
+  "dependsOn": [
+    "ogc.model.cross-domain.dcterms"
+  ],
+  "sources": [],
+  "tags": [
+    "utils"
+  ],
+  "shaclShapes": {
+    "ogc.bbr.utils.compoundName.ontology": [
+      "https://ogcincubator.github.io/bblocks-utility/_sources/compoundName/ontology/shapes.shacl"
+    ]
+  },
+  "dateOfLastChange": "2026-10-26",
+  "ontology": "https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/utils/compoundName/ontology/ontology.ttl",
+  "sourceFiles": "https://ogcincubator.github.io/bblocks-utility/_sources/compoundName/ontology/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/ogcincubator/bblocks-utility/blob/master/build/tests/bbr/utils/compoundName/ontology/",
+  "description": "Many regulations require complex naming rules, where components of a name must match various content control rules.\n\nThis model defines a simple pattern for **compound names**, allowing applications to add additional rules to profile this for specific applications.\n\nThis ontology was originally the Common Patterns module of the ICSM 3D Cadastral Survey Data Model (3D CSDM)\n(`https://linked.data.gov.au/def/csdm/commonpatterns`). It has been generalised for reuse in the\n`https://w3id.org/ogc/utils/label/` namespace, which is also used by the Compound Name (`ogc.bbr.utils.compoundName`)\nJSON-LD context.\n\n## SHACL rules\n\nThe SHACL rules for compound names live here rather than in the Compound Name schema block, which depends on this block\nand inherits them. The rules follow the RDF produced from the Compound Name JSON encoding:\n\n- **Compound name:** a label, one or more `dct:hasPart` name parts, or both. Where both are present, the label of each\n  part must appear in the compound label.\n- **Name part:** a label (`rdfs:label`), a reference to what it names (`namePartRef`), or both, and optionally a\n  functional type (`namePartType`). The reference and the type are IRIs.\n\n\nThe compound name rules apply to two kinds of node: instances of `CompoundName`, and values of `<https://w3id.org/ogc/utils/label/name>`. Compound names\nthat are neither are not checked. This includes compound names reached through a sub-property of `name` (validation does\nnot apply RDFS inference) and the untyped top-level object of a Compound Name JSON document. To have such names checked,\ntype them as `CompoundName`. \n\n",
+  "examples": [
+    {
+      "title": "Compound name with typed and referenced parts",
+      "content": "A name whose label is composed of parts. Each part has a label, a reference to what it names, or both,\nand optionally a functional type. The label of each part must appear in the compound label.",
+      "base-output-filename": "compound-name",
+      "snippets": [
+        {
+          "language": "turtle",
+          "url": "https://ogcincubator.github.io/bblocks-utility/build/tests/bbr/utils/compoundName/ontology/compound-name.ttl",
+          "sizeBytes": 587,
+          "code": "@prefix com: <https://w3id.org/ogc/utils/label/> .\n@prefix dct: <http://purl.org/dc/terms/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix ex: <http://www.example.com/namedobjects/> .\n@prefix nametype: <http://www.example.com/nametypes/> .\n@prefix namerefs: <http://www.example.com/namerefs/> .\n\nex:lot1 com:name [\n    a com:CompoundName ;\n    rdfs:label \"IS II - DP 3333\" ;\n    dct:hasPart [ com:namePartType nametype:planTypes ; com:namePartRef namerefs:dp333 ; rdfs:label \"DP 3333\" ] ,\n                [ com:namePartType nametype:Stamp ; rdfs:label \"IS II\" ]\n  ] .\n"
+        }
+      ],
+      "prefixes": {
+        "com": "https://w3id.org/ogc/utils/label/",
+        "dct": "http://purl.org/dc/terms/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "ex": "http://www.example.com/namedobjects/",
+        "nametype": "http://www.example.com/nametypes/",
+        "namerefs": "http://www.example.com/namerefs/"
+      }
+    },
+    {
+      "title": "Specialised compound name class",
+      "content": "A local subclass of CompoundName. Its instances are validated by the CompoundName rules, provided the\nrdfs:subClassOf statement is available to the validator (here it is included in the data).",
+      "base-output-filename": "compound-name-subclass",
+      "snippets": [
+        {
+          "language": "turtle",
+          "url": "https://ogcincubator.github.io/bblocks-utility/build/tests/bbr/utils/compoundName/ontology/compound-name-subclass.ttl",
+          "sizeBytes": 606,
+          "code": "@prefix com: <https://w3id.org/ogc/utils/label/> .\n@prefix dct: <http://purl.org/dc/terms/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix ex: <http://www.example.com/namedobjects/> .\n@prefix nametype: <http://www.example.com/nametypes/> .\n@prefix namerefs: <http://www.example.com/namerefs/> .\n\nex:PlanName rdfs:subClassOf com:CompoundName .\n\nex:plan1 a ex:PlanName ;\n  rdfs:label \"IS II - DP 3333\" ;\n  dct:hasPart [ com:namePartType nametype:planTypes ; com:namePartRef namerefs:dp333 ; rdfs:label \"DP 3333\" ] ,\n              [ com:namePartType nametype:Stamp ; rdfs:label \"IS II\" ] .\n"
+        }
+      ],
+      "prefixes": {
+        "com": "https://w3id.org/ogc/utils/label/",
+        "dct": "http://purl.org/dc/terms/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "ex": "http://www.example.com/namedobjects/",
+        "nametype": "http://www.example.com/nametypes/",
+        "namerefs": "http://www.example.com/namerefs/"
+      }
+    },
+    {
+      "title": "Specialised name property",
+      "content": "Local sub-properties of com:name (directly or transitively). Their values are validated by the\nCompoundName rules, provided the rdfs:subPropertyOf statements are available to the validator\n(here they are included in the data).",
+      "base-output-filename": "compound-name-subproperty",
+      "snippets": [
+        {
+          "language": "turtle",
+          "url": "https://ogcincubator.github.io/bblocks-utility/build/tests/bbr/utils/compoundName/ontology/compound-name-subproperty.ttl",
+          "sizeBytes": 574,
+          "code": "@prefix com: <https://w3id.org/ogc/utils/label/> .\n@prefix dct: <http://purl.org/dc/terms/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix ex: <http://www.example.com/namedobjects/> .\n@prefix nametype: <http://www.example.com/nametypes/> .\n\nex:officialName rdfs:subPropertyOf com:name .\nex:registeredName rdfs:subPropertyOf ex:officialName .\n\nex:lot1 ex:officialName [\n    rdfs:label \"IS II - DP 3333\" ;\n    dct:hasPart [ rdfs:label \"DP 3333\" ] , [ com:namePartType nametype:Stamp ; rdfs:label \"IS II\" ]\n  ] ;\n  ex:registeredName [ rdfs:label \"Lot 1\" ] .\n"
+        }
+      ],
+      "prefixes": {
+        "com": "https://w3id.org/ogc/utils/label/",
+        "dct": "http://purl.org/dc/terms/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "ex": "http://www.example.com/namedobjects/",
+        "nametype": "http://www.example.com/nametypes/",
+        "namerefs": "http://www.example.com/namerefs/"
+      }
+    },
+    {
+      "title": "Qualified measurement",
+      "base-output-filename": "measure",
+      "snippets": [
+        {
+          "language": "turtle",
+          "url": "https://ogcincubator.github.io/bblocks-utility/build/tests/bbr/utils/compoundName/ontology/measure.ttl",
+          "sizeBytes": 172,
+          "code": "@prefix com: <https://w3id.org/ogc/utils/label/> .\n@prefix ex: <http://www.example.com/measures/> .\n\nex:m1 a com:Measure ;\n  com:value 17.055 ;\n  com:qualityMeasure 0.05 .\n"
+        }
+      ],
+      "prefixes": {
+        "com": "https://w3id.org/ogc/utils/label/",
+        "dct": "http://purl.org/dc/terms/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "ex": "http://www.example.com/namedobjects/",
+        "nametype": "http://www.example.com/nametypes/",
+        "namerefs": "http://www.example.com/namerefs/"
+      }
+    }
+  ],
+  "examplePrefixes": {
+    "com": "https://w3id.org/ogc/utils/label/",
+    "dct": "http://purl.org/dc/terms/",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "ex": "http://www.example.com/namedobjects/",
+    "nametype": "http://www.example.com/nametypes/",
+    "namerefs": "http://www.example.com/namerefs/"
+  },
+  "annotatedSchema": null,
+  "gitRepository": "https://github.com/ogcincubator/bblocks-utility",
+  "gitPath": "_sources/compoundName/ontology"
+}

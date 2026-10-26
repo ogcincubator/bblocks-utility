@@ -4,7 +4,7 @@
       "nametype": "http://www.example.com/nametypes/",
       "namerefs": "http://www.example.com/namerefs/"
     },
-    "https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/utils/compoundName/context.jsonld"
+    "https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/utils/compoundName/schema/context.jsonld"
   ],
   "id": "CompoundNameExample",
   "label": "IS II - DP 3333",

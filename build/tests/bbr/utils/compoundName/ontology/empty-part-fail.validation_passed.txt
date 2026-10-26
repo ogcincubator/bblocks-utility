@@ -1,0 +1,35 @@
+Validation report for ogc.bbr.utils.compoundName.ontology - Compound Name Model
+Generated 2026-10-26T07:44:13.009521+00:00
+=== General ===
+Test was expected to fail and it did.
+=== End General ===
+
+=== Files ===
+Using empty-part-fail.ttl from test resources
+=== End Files ===
+
+=== SHACL ===
+Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):
+ - https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_terms.ttl
+ - /github/workspace/_sources/compoundName/ontology/ontology.ttl
+
+** Validation error **
+Validation result for _sources/compoundName/ontology/shapes.shacl:
+  Validation Report
+  Conforms: False
+  Results (1):
+  Constraint Violation in NodeConstraintComponent (http://www.w3.org/ns/shacl#NodeConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: :CompoundName-hasPart
+  	Focus Node: [ dct:hasPart [ com:namePartType nametype:Stamp ] ; rdfs:label Literal("IS II") ]
+  	Value Node: [ com:namePartType nametype:Stamp ]
+  	Result Path: dct:hasPart
+  	Message: Value does not conform to Shape :NamePartShape
+  
+Focus nodes for _sources/compoundName/ontology/shapes.shacl:
+ - Shape :MeasureShape: *none*
+ - Shape :NamePartShape: *none*
+ - Shape :CompoundNameShape: ex:lot1/com:name
+
+=== End SHACL ===
+

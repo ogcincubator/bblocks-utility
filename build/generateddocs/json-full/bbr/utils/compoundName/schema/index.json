@@ -1,0 +1,107 @@
+
+
+{
+  "itemIdentifier": "ogc.bbr.utils.compoundName.schema",
+  "name": "Compound Name",
+  "highlighted": true,
+  "abstract": "A multiple part name, consisting of a set of strings with functional roles that can be combined into single string using a template.",
+  "status": "under-development",
+  "dateTimeAddition": "2023-04-05T00:00:00Z",
+  "itemClass": "schema",
+  "register": "icsm-csdm",
+  "version": "0.1",
+  "dateOfLastChange": "2026-10-26",
+  "link": "https://github.com/icsm-au/3d-csdm-schema",
+  "sources": [
+    {
+      "title": "CSDM model",
+      "link": "https://github.com/icsm-au/3d-csdm"
+    }
+  ],
+  "maturity": "development",
+  "scope": "unstable",
+  "tags": [
+    "utils"
+  ],
+  "dependsOn": [
+    "ogc.bbr.utils.compoundName.ontology",
+    "ogc.ogc-utils.iri-or-curie"
+  ],
+  "shaclShapes": {
+    "ogc.bbr.utils.compoundName.ontology": [
+      "https://ogcincubator.github.io/bblocks-utility/_sources/compoundName/ontology/shapes.shacl"
+    ]
+  },
+  "ldContext": "https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/utils/compoundName/schema/context.jsonld",
+  "schema": {
+    "application/yaml": "https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/utils/compoundName/schema/schema.yaml",
+    "application/json": "https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/utils/compoundName/schema/schema.json"
+  },
+  "sourceSchema": "https://ogcincubator.github.io/bblocks-utility/_sources/compoundName/schema/schema.json",
+  "sourceLdContext": "https://ogcincubator.github.io/bblocks-utility/_sources/compoundName/schema/context.jsonld",
+  "resolvedSchemaProperties": "https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/utils/compoundName/schema/resolvedProperties.json",
+  "sourceFiles": "https://ogcincubator.github.io/bblocks-utility/_sources/compoundName/schema/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/ogcincubator/bblocks-utility/blob/master/build/tests/bbr/utils/compoundName/schema/",
+  "examples": [
+    {
+      "title": "Example CompoundName",
+      "content": "A name with a label, but also a set of parts with roles that can be validated against content rules.",
+      "snippets": [
+        {
+          "language": "json",
+          "ref": "https://ogcincubator.github.io/bblocks-utility/_sources/compoundName/schema/examples/strings.json",
+          "base-uri": "http://www.example.com/namedobjects/",
+          "url": "https://ogcincubator.github.io/bblocks-utility/build/tests/bbr/utils/compoundName/schema/example_1_1.json",
+          "sizeBytes": 343,
+          "code": "{\n    \"id\": \"CompoundNameExample\",\n    \"label\": \"IS II - DP 3333\",\n    \"comment\": \"note: label may be absent or subject to rules regarding presence of parts\",\n    \"hasPart\": [\n        {\n            \"type\": \"Source\",\n            \"label\": \"DP 3333\"\n        },\n        {\n            \"type\": \"Stamp\",\n            \"label\": \"IS II\"\n        }\n    ]\n}"
+        },
+        {
+          "language": "jsonld",
+          "url": "https://ogcincubator.github.io/bblocks-utility/build/tests/bbr/utils/compoundName/schema/example_1_1.jsonld",
+          "sizeBytes": 418,
+          "code": "{\n  \"@context\": \"https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/utils/compoundName/schema/context.jsonld\",\n  \"id\": \"CompoundNameExample\",\n  \"label\": \"IS II - DP 3333\",\n  \"comment\": \"note: label may be absent or subject to rules regarding presence of parts\",\n  \"hasPart\": [\n    {\n      \"type\": \"Source\",\n      \"label\": \"DP 3333\"\n    },\n    {\n      \"type\": \"Stamp\",\n      \"label\": \"IS II\"\n    }\n  ]\n}"
+        },
+        {
+          "language": "ttl",
+          "url": "https://ogcincubator.github.io/bblocks-utility/build/tests/bbr/utils/compoundName/schema/example_1_1.ttl",
+          "sizeBytes": 453,
+          "code": "@prefix commonpatterns: <https://w3id.org/ogc/utils/label/> .\n@prefix dcterms: <http://purl.org/dc/terms/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n\n[] rdfs:label \"IS II - DP 3333\" ;\n    dcterms:hasPart [ rdfs:label \"DP 3333\" ;\n            commonpatterns:namePartType <http://www.example.com/namedobjects/Source> ],\n        [ rdfs:label \"IS II\" ;\n            commonpatterns:namePartType <http://www.example.com/namedobjects/Stamp> ] .\n\n"
+        }
+      ]
+    },
+    {
+      "title": "Referenced Parts",
+      "content": "An example name where part of the name is a reference to a vocabulary source.  This can us used for validation and multi-linual applications",
+      "prefixes": {
+        "nametype": "http://www.example.com/nametypes/",
+        "namerefs": "http://www.example.com/namerefs/"
+      },
+      "snippets": [
+        {
+          "language": "json",
+          "ref": "https://ogcincubator.github.io/bblocks-utility/_sources/compoundName/schema/examples/coderefs.json",
+          "base-uri": "http://www.example.com/namedobjects/",
+          "url": "https://ogcincubator.github.io/bblocks-utility/build/tests/bbr/utils/compoundName/schema/example_2_1.json",
+          "sizeBytes": 379,
+          "code": "{\n    \"id\": \"CompoundNameExample\",\n    \"label\": \"IS II - DP 3333\",\n    \"comment\": \"the label of the part is optional - but can be cross checked\",\n    \"hasPart\": [\n        {\n            \"type\": \"nametype:planTypes\",\n            \"ref\": \"namerefs:dp333\",\n            \"label\": \"DP 3333\"\n        },\n        {\n            \"type\": \"Stamp\",\n            \"label\": \"IS II\"\n        }\n    ]\n}"
+        },
+        {
+          "language": "jsonld",
+          "url": "https://ogcincubator.github.io/bblocks-utility/build/tests/bbr/utils/compoundName/schema/example_2_1.jsonld",
+          "sizeBytes": 579,
+          "code": "{\n  \"@context\": [\n    {\n      \"nametype\": \"http://www.example.com/nametypes/\",\n      \"namerefs\": \"http://www.example.com/namerefs/\"\n    },\n    \"https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/utils/compoundName/schema/context.jsonld\"\n  ],\n  \"id\": \"CompoundNameExample\",\n  \"label\": \"IS II - DP 3333\",\n  \"comment\": \"the label of the part is optional - but can be cross checked\",\n  \"hasPart\": [\n    {\n      \"type\": \"nametype:planTypes\",\n      \"ref\": \"namerefs:dp333\",\n      \"label\": \"DP 3333\"\n    },\n    {\n      \"type\": \"Stamp\",\n      \"label\": \"IS II\"\n    }\n  ]\n}"
+        },
+        {
+          "language": "ttl",
+          "url": "https://ogcincubator.github.io/bblocks-utility/build/tests/bbr/utils/compoundName/schema/example_2_1.ttl",
+          "sizeBytes": 594,
+          "code": "@prefix commonpatterns: <https://w3id.org/ogc/utils/label/> .\n@prefix dcterms: <http://purl.org/dc/terms/> .\n@prefix namerefs: <http://www.example.com/namerefs/> .\n@prefix nametype: <http://www.example.com/nametypes/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n\n[] rdfs:label \"IS II - DP 3333\" ;\n    dcterms:hasPart [ rdfs:label \"DP 3333\" ;\n            commonpatterns:namePartRef namerefs:dp333 ;\n            commonpatterns:namePartType nametype:planTypes ],\n        [ rdfs:label \"IS II\" ;\n            commonpatterns:namePartType <http://www.example.com/namedobjects/Stamp> ] .\n\n"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Compound Name\nanyOf:\n- required:\n  - label\n- required:\n  - hasPart\nadditionalProperties: true\nproperties:\n  label:\n    anyOf:\n    - type: 'null'\n    - type: string\n    x-jsonld-id: http://www.w3.org/2000/01/rdf-schema#label\n  template:\n    type: string\n  hasPart:\n    type: array\n    items:\n      type: object\n      additionalProperties: false\n      properties:\n        label:\n          type: string\n          x-jsonld-id: http://www.w3.org/2000/01/rdf-schema#label\n        ref:\n          $ref: https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/iri-or-curie/schema.yaml\n          x-jsonld-type: '@id'\n          x-jsonld-id: https://w3id.org/ogc/utils/label/namePartRef\n        type:\n          $ref: https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/iri-or-curie/schema.yaml\n          x-jsonld-type: '@id'\n          x-jsonld-id: https://w3id.org/ogc/utils/label/namePartType\n      anyOf:\n      - required:\n        - label\n      - required:\n        - ref\n    x-jsonld-id: http://purl.org/dc/terms/hasPart\nx-jsonld-extra-terms:\n  name: https://w3id.org/ogc/utils/label/name\n  CompoundName: https://w3id.org/ogc/utils/label/CompoundName\nx-jsonld-prefixes:\n  dct: http://purl.org/dc/terms/\n  commonpatterns: https://w3id.org/ogc/utils/label/\n  rdfs: http://www.w3.org/2000/01/rdf-schema#\nx-bblocks-metadata:\n  itemIdentifier: ogc.bbr.utils.compoundName.schema\n  register: https://ogcincubator.github.io/bblocks-utility/build/register.json\n  version: '0.1'\n  dateOfLastChange: '2026-10-26'\n",
+  "gitRepository": "https://github.com/ogcincubator/bblocks-utility",
+  "gitPath": "_sources/compoundName/schema"
+}

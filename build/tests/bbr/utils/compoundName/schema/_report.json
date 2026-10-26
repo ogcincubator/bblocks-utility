@@ -1,16 +1,16 @@
 {
-  "title": "Validation report for ogc.bbr.utils.compoundName - Compound Name",
+  "title": "Validation report for ogc.bbr.utils.compoundName.schema - Compound Name",
   "bblockName": "Compound Name",
-  "bblockId": "ogc.bbr.utils.compoundName",
-  "generated": "2026-08-06T06:04:40.154440+00:00",
+  "bblockId": "ogc.bbr.utils.compoundName.schema",
+  "generated": "2026-10-26T07:44:13.898988+00:00",
   "result": true,
   "items": [
     {
       "source": {
         "type": "EXAMPLE",
         "requireFail": false,
-        "filename": "build/tests/bbr/utils/compoundName/example_1_1.json",
-        "url": "https://ogcincubator.github.io/bblocks-utility/build/tests/bbr/utils/compoundName/example_1_1.json",
+        "filename": "build/tests/bbr/utils/compoundName/schema/example_1_1.json",
+        "url": "https://ogcincubator.github.io/bblocks-utility/build/tests/bbr/utils/compoundName/schema/example_1_1.json",
         "exampleIndex": 1,
         "snippetIndex": 1,
         "language": "application/json"
@@ -63,21 +63,31 @@
           "title": "SHACL",
           "entries": [
             {
-              "op": "shacl-report",
-              "shaclFile": "_sources/compoundName/rules.shacl",
-              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
               "isError": false,
-              "message": "Validation result for _sources/compoundName/rules.shacl:\n  Validation Report\n  Conforms: True\n  "
+              "message": "Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):\n - https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_terms.ttl\n - /github/workspace/_sources/compoundName/ontology/ontology.ttl"
             },
             {
-              "shaclFile": "_sources/compoundName/rules.shacl",
+              "op": "shacl-report",
+              "shaclFile": "_sources/compoundName/ontology/shapes.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for _sources/compoundName/ontology/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "_sources/compoundName/ontology/shapes.shacl",
               "focusNodes": {
-                "_:n39b6c27c56c54f9ca530755c310ed373b1": {
+                ":MeasureShape": {
+                  "nodes": []
+                },
+                ":NamePartShape": {
+                  "nodes": []
+                },
+                ":CompoundNameShape": {
                   "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/compoundName/rules.shacl:\n - Shape _:n39b6c27c56c54f9ca530755c310ed373b1: *none*\n"
+              "message": "Focus nodes for _sources/compoundName/ontology/shapes.shacl:\n - Shape :MeasureShape: *none*\n - Shape :NamePartShape: *none*\n - Shape :CompoundNameShape: *none*\n"
             }
           ]
         }
@@ -87,8 +97,8 @@
       "source": {
         "type": "EXAMPLE",
         "requireFail": false,
-        "filename": "build/tests/bbr/utils/compoundName/example_2_1.json",
-        "url": "https://ogcincubator.github.io/bblocks-utility/build/tests/bbr/utils/compoundName/example_2_1.json",
+        "filename": "build/tests/bbr/utils/compoundName/schema/example_2_1.json",
+        "url": "https://ogcincubator.github.io/bblocks-utility/build/tests/bbr/utils/compoundName/schema/example_2_1.json",
         "exampleIndex": 2,
         "snippetIndex": 1,
         "language": "application/json"
@@ -141,21 +151,31 @@
           "title": "SHACL",
           "entries": [
             {
-              "op": "shacl-report",
-              "shaclFile": "_sources/compoundName/rules.shacl",
-              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
               "isError": false,
-              "message": "Validation result for _sources/compoundName/rules.shacl:\n  Validation Report\n  Conforms: True\n  "
+              "message": "Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):\n - https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_terms.ttl\n - /github/workspace/_sources/compoundName/ontology/ontology.ttl"
             },
             {
-              "shaclFile": "_sources/compoundName/rules.shacl",
+              "op": "shacl-report",
+              "shaclFile": "_sources/compoundName/ontology/shapes.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for _sources/compoundName/ontology/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "_sources/compoundName/ontology/shapes.shacl",
               "focusNodes": {
-                "_:n39b6c27c56c54f9ca530755c310ed373b1": {
+                ":MeasureShape": {
+                  "nodes": []
+                },
+                ":NamePartShape": {
+                  "nodes": []
+                },
+                ":CompoundNameShape": {
                   "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/compoundName/rules.shacl:\n - Shape _:n39b6c27c56c54f9ca530755c310ed373b1: *none*\n"
+              "message": "Focus nodes for _sources/compoundName/ontology/shapes.shacl:\n - Shape :MeasureShape: *none*\n - Shape :NamePartShape: *none*\n - Shape :CompoundNameShape: *none*\n"
             }
           ]
         }

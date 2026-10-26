@@ -1,7 +1,7 @@
 
 # Compound Name (Schema)
 
-`ogc.bbr.utils.compoundName` *v0.1*
+`ogc.bbr.utils.compoundName.schema` *v0.1*
 
 A multiple part name, consisting of a set of strings with functional roles that can be combined into single string using a template.
 
@@ -33,7 +33,7 @@ A name with a label, but also a set of parts with roles that can be validated ag
 #### jsonld
 ```jsonld
 {
-  "@context": "https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/utils/compoundName/context.jsonld",
+  "@context": "https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/utils/compoundName/schema/context.jsonld",
   "id": "CompoundNameExample",
   "label": "IS II - DP 3333",
   "comment": "note: label may be absent or subject to rules regarding presence of parts",
@@ -57,10 +57,10 @@ A name with a label, but also a set of parts with roles that can be validated ag
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 [] rdfs:label "IS II - DP 3333" ;
-    dcterms:hasPart [ rdfs:label "IS II" ;
-            commonpatterns:namePartType <http://www.example.com/namedobjects/Stamp> ],
-        [ rdfs:label "DP 3333" ;
-            commonpatterns:namePartType <http://www.example.com/namedobjects/Source> ] .
+    dcterms:hasPart [ rdfs:label "DP 3333" ;
+            commonpatterns:namePartType <http://www.example.com/namedobjects/Source> ],
+        [ rdfs:label "IS II" ;
+            commonpatterns:namePartType <http://www.example.com/namedobjects/Stamp> ] .
 
 
 ```
@@ -96,7 +96,7 @@ An example name where part of the name is a reference to a vocabulary source.  T
       "nametype": "http://www.example.com/nametypes/",
       "namerefs": "http://www.example.com/namerefs/"
     },
-    "https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/utils/compoundName/context.jsonld"
+    "https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/utils/compoundName/schema/context.jsonld"
   ],
   "id": "CompoundNameExample",
   "label": "IS II - DP 3333",
@@ -182,13 +182,18 @@ x-jsonld-prefixes:
   dct: http://purl.org/dc/terms/
   commonpatterns: https://w3id.org/ogc/utils/label/
   rdfs: http://www.w3.org/2000/01/rdf-schema#
+x-bblocks-metadata:
+  itemIdentifier: ogc.bbr.utils.compoundName.schema
+  register: https://ogcincubator.github.io/bblocks-utility/build/register.json
+  version: '0.1'
+  dateOfLastChange: '2026-10-26'
 
 ```
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/utils/compoundName/schema.json)
-* JSON version: [schema.json](https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/utils/compoundName/schema.yaml)
+* YAML version: [schema.yaml](https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/utils/compoundName/schema/schema.json)
+* JSON version: [schema.json](https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/utils/compoundName/schema/schema.yaml)
 
 
 # JSON-LD Context
@@ -221,7 +226,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/utils/compoundName/context.jsonld)
+[context.jsonld](https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/utils/compoundName/schema/context.jsonld)
 
 ## Sources
 
@@ -232,5 +237,5 @@ You can find the full JSON-LD context here:
 The source code for this Building Block can be found in the following repository:
 
 * URL: [https://github.com/ogcincubator/bblocks-utility](https://github.com/ogcincubator/bblocks-utility)
-* Path: `_sources/compoundName`
+* Path: `_sources/compoundName/schema`
 

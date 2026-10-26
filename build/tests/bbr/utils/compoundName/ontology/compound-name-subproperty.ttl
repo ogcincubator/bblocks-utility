@@ -1,0 +1,16 @@
+@prefix com: <https://w3id.org/ogc/utils/label/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix ex: <http://www.example.com/namedobjects/> .
+@prefix nametype: <http://www.example.com/nametypes/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ex:lot1 ex:officialName [ rdfs:label "IS II - DP 3333" ;
+            dct:hasPart [ rdfs:label "DP 3333" ],
+                [ rdfs:label "IS II" ;
+                    com:namePartType nametype:Stamp ] ] ;
+    ex:registeredName [ rdfs:label "Lot 1" ] .
+
+ex:registeredName rdfs:subPropertyOf ex:officialName .
+
+ex:officialName rdfs:subPropertyOf com:name .
+

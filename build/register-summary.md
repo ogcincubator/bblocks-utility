@@ -8,7 +8,13 @@ Things that are common, but not scoped OGC.  Labelling - such as different forms
 
 ## Building Blocks
 
-### `ogc.bbr.utils.compoundName` — Compound Name
+### `ogc.bbr.utils.compoundName.ontology` — Compound Name Model
+
+**Type:** model
+
+Ontology and SHACL rules for common implementation patterns not directly supported by other standards: compound names and name parts, qualified measures, jurisdictional codelists and reports.
+
+### `ogc.bbr.utils.compoundName.schema` — Compound Name
 
 **Type:** schema
 

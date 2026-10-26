@@ -1,0 +1,8 @@
+@prefix com: <https://w3id.org/ogc/utils/label/> .
+@prefix ex: <http://www.example.com/measures/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:m1 a com:Measure ;
+    com:qualityMeasure 0.05 ;
+    com:value 17.055 .
+
