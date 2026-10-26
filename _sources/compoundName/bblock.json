@@ -17,5 +17,10 @@
   ],
   "maturity": "development",
   "scope": "unstable",
-  "tags": ["utils"]
+  "tags": [
+    "utils"
+  ],
+  "dependsOn": [
+    "bblocks://ogc.bbr.utils.commonpatterns"
+  ]
 }

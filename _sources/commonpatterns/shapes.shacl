@@ -1,0 +1,104 @@
+@prefix :     <https://w3id.org/ogc/utils/label/> .
+@prefix dct:  <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+# Compound names: any instance of CompoundName, or any value of :name (the JSON encoding does not type them)
+:CompoundNameShape
+  a sh:NodeShape ;
+  sh:targetClass :CompoundName ;
+  sh:targetObjectsOf :name ;
+  sh:or (
+      [ sh:path rdfs:label ; sh:minCount 1 ]
+      [ sh:path dct:hasPart ; sh:minCount 1 ]
+    ) ;
+  sh:message "A compound name must have a label, name parts, or both" ;
+  sh:property :CompoundName-label ;
+  sh:property :CompoundName-hasPart ;
+  sh:property :CompoundName-partsInLabel ;
+.
+
+:CompoundName-label
+  a sh:PropertyShape ;
+  sh:path rdfs:label ;
+  sh:name "label" ;
+  sh:description "Default simple string value" ;
+  sh:datatype xsd:string ;
+  sh:maxCount 1 ;
+.
+
+:CompoundName-hasPart
+  a sh:PropertyShape ;
+  sh:path dct:hasPart ;
+  sh:name "namePart" ;
+  sh:description "A typed part of a name, to be formatted into a final form according to localised business rules." ;
+  sh:node :NamePartShape ;
+.
+
+:CompoundName-partsInLabel
+  a sh:PropertyShape ;
+  sh:path rdfs:label ;
+  sh:name "NameParts in Label" ;
+  sh:description "Test labelled parts present in compound label if present" ;
+  sh:sparql [
+      sh:message "Name parts must exist in label if present" ;
+      sh:prefixes [ sh:declare
+          [ sh:prefix "dct" ; sh:namespace "http://purl.org/dc/terms/"^^xsd:anyURI ] ,
+          [ sh:prefix "rdfs" ; sh:namespace "http://www.w3.org/2000/01/rdf-schema#"^^xsd:anyURI ] ] ;
+      sh:select """
+        SELECT $this (rdfs:label AS ?path) ?value
+        WHERE {
+          $this dct:hasPart ?p .
+          $this rdfs:label ?label .
+          ?p rdfs:label ?value
+          FILTER ( ! CONTAINS( LCASE(?label), LCASE(?value)) )
+        }
+        """ ;
+    ] ;
+.
+
+# Name parts, as encoded by the compoundName JSON-LD context (label, ref -> namePartRef, type -> namePartType)
+:NamePartShape
+  a sh:NodeShape ;
+  sh:targetClass :NamePart ;
+  sh:or (
+      [ sh:path rdfs:label ; sh:minCount 1 ]
+      [ sh:path :namePartRef ; sh:minCount 1 ]
+    ) ;
+  sh:message "A name part must have a label, a reference, or both" ;
+  sh:property [
+      sh:path rdfs:label ;
+      sh:name "Part Value" ;
+      sh:datatype xsd:string ;
+      sh:maxCount 1 ;
+    ] ;
+  sh:property [
+      sh:path :namePartRef ;
+      sh:name "Part Reference" ;
+      sh:nodeKind sh:IRI ;
+      sh:maxCount 1 ;
+    ] ;
+  sh:property [
+      sh:path :namePartType ;
+      sh:name "Part Type" ;
+      sh:nodeKind sh:IRI ;
+      sh:maxCount 1 ;
+    ] ;
+.
+
+:MeasureShape
+  a sh:NodeShape ;
+  sh:targetClass :Measure ;
+  sh:property [
+      sh:path :value ;
+      sh:datatype xsd:decimal ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ;
+    ] ;
+  sh:property [
+      sh:path :qualityMeasure ;
+      sh:datatype xsd:decimal ;
+      sh:maxCount 1 ;
+    ] ;
+.

@@ -1,0 +1,144 @@
+# baseURI: https://w3id.org/ogc/utils/label
+#
+# Common implementation patterns not directly supported by other standards.
+# Originally the CSDM Common Patterns module (https://linked.data.gov.au/def/csdm/commonpatterns),
+# generalised for reuse outside the 3D Cadastral Survey Data Model.
+
+@prefix :     <https://w3id.org/ogc/utils/label/> .
+@prefix dct:  <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ont:  <https://w3id.org/ogc/utils/label> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix prof: <http://www.w3.org/ns/dx/prof/> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+ont:
+  a owl:Ontology ;
+  rdfs:label "Common implementation patterns not directly supported by other standards" ;
+  dct:source <https://linked.data.gov.au/def/csdm/commonpatterns> ;
+.
+
+:Common
+  a owl:Class ;
+  rdfs:isDefinedBy ont: ;
+  rdfs:label "Common Implementation Patterns" ;
+  skos:definition "SuperClass for common implementations patterns not provided by existing standards" ;
+  skos:prefLabel "Common Reusable Patterns" ;
+.
+
+:CompoundName
+  a owl:Class ;
+  rdfs:isDefinedBy ont: ;
+  rdfs:label "CompoundName" ;
+  rdfs:subClassOf :Common ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty rdfs:label ;
+    ] ;
+  skos:definition "An ordered list of name parts. The order may be specified by either a list implementation, by implicit order defined in a formatting specification, or within a more explicit model of name part types." ;
+  skos:scopeNote "A compound name has a label (its preferred formatting), a set of parts (dct:hasPart), or both. Where both are present, the label of each part must appear in the compound label." ;
+  foaf:depiction <https://surroundbitbucket.bitbucket.io/3d-cadastre/spec/CompoundName.png> ;
+.
+
+:NamePart
+  a owl:Class ;
+  rdfs:isDefinedBy ont: ;
+  rdfs:label "Name Part" ;
+  rdfs:subClassOf :Common ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty rdfs:label ;
+    ] ;
+  rdfs:comment "Name Parts may be specialised by local business rules and support additional referential and syntactic requirements. Localised models may define implicit order for constructing a compound name if no format is specified in a containing CompoundName." ;
+  skos:definition "An ordered part of a compound name." ;
+  skos:scopeNote "A name part has a label, a reference to the thing it names (namePartRef), or both, and optionally a functional role (namePartType)." ;
+.
+
+:Measure
+  a owl:Class ;
+  rdfs:isDefinedBy ont: ;
+  rdfs:label "Qualified Measurement" ;
+  rdfs:subClassOf :Common ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:cardinality 1 ;
+      owl:onProperty :value ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:maxCardinality 1 ;
+      owl:onProperty :qualityMeasure ;
+    ] ;
+.
+
+:RelevantJurisdictionalCodelist
+  a owl:Class ;
+  rdfs:isDefinedBy ont: ;
+  rdfs:label "Relevant Jurisdictional Codelist" ;
+  rdfs:subClassOf skos:ConceptScheme ;
+  rdfs:subClassOf :Common ;
+  skos:definition "A codelist that will be defined in each implementing jurisdiction" ;
+.
+
+:Report
+  a owl:Class ;
+  rdfs:isDefinedBy ont: ;
+  rdfs:label "Report" ;
+  rdfs:subClassOf prof:ResourceDescriptor ;
+  rdfs:subClassOf :Common ;
+  skos:definition "An arbitrary report of a known type, with metadata about its purpose and format as required." ;
+  skos:editorialNote "Logical model using the ResourceDescriptor pattern from the Profiles vocabulary to allow specification of what form the report or document is in. " ;
+.
+
+:name
+  a owl:ObjectProperty ;
+  rdfs:isDefinedBy ont: ;
+  rdfs:label "Name" ;
+  rdfs:range :CompoundName ;
+  rdfs:comment "a label property may be present on the subject with the preferred formatting of a compound name." ;
+  skos:definition "A name composed of components according to localised implementation requirements." ;
+.
+
+:namePartType
+  a owl:ObjectProperty ;
+  rdfs:isDefinedBy ont: ;
+  rdfs:label "Name Part Type" ;
+  rdfs:domain :NamePart ;
+  skos:definition "The functional role of a name part within a compound name, typically a concept from a jurisdictional codelist." ;
+.
+
+:namePartRef
+  a owl:ObjectProperty ;
+  rdfs:isDefinedBy ont: ;
+  rdfs:label "Name Part Reference" ;
+  rdfs:domain :NamePart ;
+  skos:definition "A reference to the resource that a name part denotes, for example a vocabulary entry or a related registered object." ;
+.
+
+:qualityMeasure
+  a owl:DatatypeProperty ;
+  rdfs:isDefinedBy ont: ;
+  rdfs:label "Quality Measure" ;
+  rdfs:range xsd:decimal ;
+  skos:definition "a numeric quality measure" ;
+  skos:scopeNote "This has not been fully modelled - a placeholder - for an ISO 19157 DQV concept" ;
+.
+
+:qualityClass
+  a owl:ObjectProperty ;
+  rdfs:isDefinedBy ont: ;
+  rdfs:label "Quality Class" ;
+  skos:scopeNote "A reference to a code indicating a quality class" ;
+.
+
+:value
+  a owl:DatatypeProperty ;
+  rdfs:isDefinedBy ont: ;
+  rdfs:label "value" ;
+  rdfs:range xsd:decimal ;
+.

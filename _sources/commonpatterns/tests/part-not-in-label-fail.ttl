@@ -1,0 +1,10 @@
+@prefix com: <https://w3id.org/ogc/utils/label/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ex: <http://www.example.com/namedobjects/> .
+
+# the part label "DP 4444" does not appear in the compound label
+ex:lot1 com:name [
+    rdfs:label "IS II - DP 3333" ;
+    dct:hasPart [ rdfs:label "DP 4444" ] , [ rdfs:label "IS II" ]
+  ] .
