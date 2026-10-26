@@ -1,5 +1,5 @@
 {
-  "name": "Common Patterns",
+  "name": "Compound Name Model",
   "highlighted": true,
   "abstract": "Ontology and SHACL rules for common implementation patterns not directly supported by other standards: compound names and name parts, qualified measures, jurisdictional codelists and reports.",
   "status": "under-development",
@@ -10,15 +10,10 @@
     "https://w3id.org/ogc/utils/label"
   ],
   "dependsOn": [
-    "bblocks://ogc.model.cross-domain.dcterms",
-    "bblocks://ogc.model.cross-domain.prof",
-    "bblocks://ogc.skos.conceptScheme"
+    "bblocks://ogc.model.cross-domain.dcterms"
   ],
   "sources": [
-    {
-      "title": "3D CSDM Common Patterns module",
-      "link": "https://github.com/icsm-au/3d-csdm/tree/main/csdm_model"
-    }
+
   ],
   "tags": ["utils"]
 }

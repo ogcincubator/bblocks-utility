@@ -21,6 +21,6 @@
     "utils"
   ],
   "dependsOn": [
-    "bblocks://ogc.bbr.utils.commonpatterns"
+    "bblocks://ogc.bbr.utils.compoundName.ontology"
   ]
 }

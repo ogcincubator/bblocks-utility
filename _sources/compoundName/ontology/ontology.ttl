@@ -9,7 +9,6 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix ont:  <https://w3id.org/ogc/utils/label> .
 @prefix owl:  <http://www.w3.org/2002/07/owl#> .
-@prefix prof: <http://www.w3.org/ns/dx/prof/> .
 @prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
@@ -21,13 +20,6 @@ ont:
   dct:source <https://linked.data.gov.au/def/csdm/commonpatterns> ;
 .
 
-:Common
-  a owl:Class ;
-  rdfs:isDefinedBy ont: ;
-  rdfs:label "Common Implementation Patterns" ;
-  skos:definition "SuperClass for common implementations patterns not provided by existing standards" ;
-  skos:prefLabel "Common Reusable Patterns" ;
-.
 
 :CompoundName
   a owl:Class ;
@@ -59,41 +51,7 @@ ont:
   skos:scopeNote "A name part has a label, a reference to the thing it names (namePartRef), or both, and optionally a functional role (namePartType)." ;
 .
 
-:Measure
-  a owl:Class ;
-  rdfs:isDefinedBy ont: ;
-  rdfs:label "Qualified Measurement" ;
-  rdfs:subClassOf :Common ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:cardinality 1 ;
-      owl:onProperty :value ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:maxCardinality 1 ;
-      owl:onProperty :qualityMeasure ;
-    ] ;
-.
 
-:RelevantJurisdictionalCodelist
-  a owl:Class ;
-  rdfs:isDefinedBy ont: ;
-  rdfs:label "Relevant Jurisdictional Codelist" ;
-  rdfs:subClassOf skos:ConceptScheme ;
-  rdfs:subClassOf :Common ;
-  skos:definition "A codelist that will be defined in each implementing jurisdiction" ;
-.
-
-:Report
-  a owl:Class ;
-  rdfs:isDefinedBy ont: ;
-  rdfs:label "Report" ;
-  rdfs:subClassOf prof:ResourceDescriptor ;
-  rdfs:subClassOf :Common ;
-  skos:definition "An arbitrary report of a known type, with metadata about its purpose and format as required." ;
-  skos:editorialNote "Logical model using the ResourceDescriptor pattern from the Profiles vocabulary to allow specification of what form the report or document is in. " ;
-.
 
 :name
   a owl:ObjectProperty ;
@@ -118,27 +76,4 @@ ont:
   rdfs:label "Name Part Reference" ;
   rdfs:domain :NamePart ;
   skos:definition "A reference to the resource that a name part denotes, for example a vocabulary entry or a related registered object." ;
-.
-
-:qualityMeasure
-  a owl:DatatypeProperty ;
-  rdfs:isDefinedBy ont: ;
-  rdfs:label "Quality Measure" ;
-  rdfs:range xsd:decimal ;
-  skos:definition "a numeric quality measure" ;
-  skos:scopeNote "This has not been fully modelled - a placeholder - for an ISO 19157 DQV concept" ;
-.
-
-:qualityClass
-  a owl:ObjectProperty ;
-  rdfs:isDefinedBy ont: ;
-  rdfs:label "Quality Class" ;
-  skos:scopeNote "A reference to a code indicating a quality class" ;
-.
-
-:value
-  a owl:DatatypeProperty ;
-  rdfs:isDefinedBy ont: ;
-  rdfs:label "value" ;
-  rdfs:range xsd:decimal ;
 .

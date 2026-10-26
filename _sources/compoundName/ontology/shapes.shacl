@@ -4,11 +4,31 @@
 @prefix sh:   <http://www.w3.org/ns/shacl#> .
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
 
-# Compound names: any instance of CompoundName, or any value of :name (the JSON encoding does not type them)
+:prefixes
+  sh:declare
+    [ sh:prefix "com" ; sh:namespace "https://w3id.org/ogc/utils/label/"^^xsd:anyURI ] ,
+    [ sh:prefix "dct" ; sh:namespace "http://purl.org/dc/terms/"^^xsd:anyURI ] ,
+    [ sh:prefix "rdfs" ; sh:namespace "http://www.w3.org/2000/01/rdf-schema#"^^xsd:anyURI ] ;
+.
+
+# Compound names: any instance of CompoundName, or any value of :name (the JSON encoding does not type them).
+# sh:targetClass also covers instances of subclasses (rdfs:subClassOf in the data graph), but sh:targetObjectsOf
+# does not follow rdfs:subPropertyOf, so values of specialisations of :name are targeted with SPARQL.
 :CompoundNameShape
   a sh:NodeShape ;
   sh:targetClass :CompoundName ;
   sh:targetObjectsOf :name ;
+  sh:target [
+      a sh:SPARQLTarget ;
+      sh:prefixes :prefixes ;
+      sh:select """
+        SELECT ?this
+        WHERE {
+          ?p rdfs:subPropertyOf+ com:name .
+          ?s ?p ?this .
+        }
+        """ ;
+    ] ;
   sh:or (
       [ sh:path rdfs:label ; sh:minCount 1 ]
       [ sh:path dct:hasPart ; sh:minCount 1 ]
@@ -43,9 +63,7 @@
   sh:description "Test labelled parts present in compound label if present" ;
   sh:sparql [
       sh:message "Name parts must exist in label if present" ;
-      sh:prefixes [ sh:declare
-          [ sh:prefix "dct" ; sh:namespace "http://purl.org/dc/terms/"^^xsd:anyURI ] ,
-          [ sh:prefix "rdfs" ; sh:namespace "http://www.w3.org/2000/01/rdf-schema#"^^xsd:anyURI ] ] ;
+      sh:prefixes :prefixes ;
       sh:select """
         SELECT $this (rdfs:label AS ?path) ?value
         WHERE {
