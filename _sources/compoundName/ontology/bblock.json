@@ -1,7 +1,7 @@
 {
   "name": "Compound Name Model",
   "highlighted": true,
-  "abstract": "Ontology and SHACL rules for common implementation patterns not directly supported by other standards: compound names and name parts, qualified measures, jurisdictional codelists and reports.",
+  "abstract": "Ontology and SHACL rules for compound names: names made of typed name parts, with rules for how the parts relate to the formatted name.",
   "status": "under-development",
   "dateTimeAddition": "2026-10-26T00:00:00Z",
   "itemClass": "model",

@@ -104,19 +104,3 @@
       sh:maxCount 1 ;
     ] ;
 .
-
-:MeasureShape
-  a sh:NodeShape ;
-  sh:targetClass :Measure ;
-  sh:property [
-      sh:path :value ;
-      sh:datatype xsd:decimal ;
-      sh:minCount 1 ;
-      sh:maxCount 1 ;
-    ] ;
-  sh:property [
-      sh:path :qualityMeasure ;
-      sh:datatype xsd:decimal ;
-      sh:maxCount 1 ;
-    ] ;
-.

@@ -1,5 +1,0 @@
-@prefix com: <https://w3id.org/ogc/utils/label/> .
-@prefix ex: <http://www.example.com/measures/> .
-
-ex:m1 a com:Measure ;
-  com:qualityMeasure 0.05 .

@@ -71,14 +71,3 @@ examples:
               dct:hasPart [ rdfs:label "DP 3333" ] , [ com:namePartType nametype:Stamp ; rdfs:label "IS II" ]
             ] ;
             ex:registeredName [ rdfs:label "Lot 1" ] .
-  - title: Qualified measurement
-    base-output-filename: measure
-    snippets:
-      - language: turtle
-        code: |
-          @prefix com: <https://w3id.org/ogc/utils/label/> .
-          @prefix ex: <http://www.example.com/measures/> .
-
-          ex:m1 a com:Measure ;
-            com:value 17.055 ;
-            com:qualityMeasure 0.05 .
