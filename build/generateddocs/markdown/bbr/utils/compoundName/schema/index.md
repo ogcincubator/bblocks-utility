@@ -57,10 +57,10 @@ A name with a label, but also a set of parts with roles that can be validated ag
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 [] rdfs:label "IS II - DP 3333" ;
-    dcterms:hasPart [ rdfs:label "DP 3333" ;
-            commonpatterns:namePartType <http://www.example.com/namedobjects/Source> ],
-        [ rdfs:label "IS II" ;
-            commonpatterns:namePartType <http://www.example.com/namedobjects/Stamp> ] .
+    dcterms:hasPart [ rdfs:label "IS II" ;
+            commonpatterns:namePartType <http://www.example.com/namedobjects/Stamp> ],
+        [ rdfs:label "DP 3333" ;
+            commonpatterns:namePartType <http://www.example.com/namedobjects/Source> ] .
 
 
 ```
@@ -124,11 +124,11 @@ An example name where part of the name is a reference to a vocabulary source.  T
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 [] rdfs:label "IS II - DP 3333" ;
-    dcterms:hasPart [ rdfs:label "DP 3333" ;
+    dcterms:hasPart [ rdfs:label "IS II" ;
+            commonpatterns:namePartType <http://www.example.com/namedobjects/Stamp> ],
+        [ rdfs:label "DP 3333" ;
             commonpatterns:namePartRef namerefs:dp333 ;
-            commonpatterns:namePartType nametype:planTypes ],
-        [ rdfs:label "IS II" ;
-            commonpatterns:namePartType <http://www.example.com/namedobjects/Stamp> ] .
+            commonpatterns:namePartType nametype:planTypes ] .
 
 
 ```
@@ -186,7 +186,7 @@ x-bblocks-metadata:
   itemIdentifier: ogc.bbr.utils.compoundName.schema
   register: https://ogcincubator.github.io/bblocks-utility/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-10-26'
+  dateOfLastChange: '2026-10-30'
 
 ```
 

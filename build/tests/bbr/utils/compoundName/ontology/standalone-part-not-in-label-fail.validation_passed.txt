@@ -1,0 +1,43 @@
+Validation report for ogc.bbr.utils.compoundName.ontology - Compound Name Model
+Generated 2026-10-30T12:54:05.729405+00:00
+=== General ===
+Test was expected to fail and it did.
+=== End General ===
+
+=== Files ===
+Using standalone-part-not-in-label-fail.ttl from test resources
+=== End Files ===
+
+=== SHACL ===
+Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):
+ - https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_terms.ttl
+ - /github/workspace/_sources/compoundName/ontology/ontology.ttl
+
+** Validation error **
+Validation result for _sources/compoundName/ontology/shapes.shacl:
+  Validation Report
+  Conforms: False
+  Results (1):
+  Constraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: :CompoundName-partsInLabel
+  	Focus Node: [ dct:hasPart [ com:namePartType nametype:number ; rdfs:label Literal("Lot 7") ] ; rdfs:label Literal("Albany Town Lot 57") ]
+  	Value Node: Literal("Lot 7")
+  	Result Path: rdfs:label
+  	Source Constraint: [ sh:message Literal("Name parts must exist in label if present") ; sh:prefixes :prefixes ; sh:select Literal("
+          SELECT $this (rdfs:label AS ?path) ?value
+          WHERE {
+            $this dct:hasPart ?p .
+            $this rdfs:label ?label .
+            ?p rdfs:label ?value
+            FILTER ( ! CONTAINS( LCASE(?label), LCASE(?value)) )
+          }
+          ") ]
+  	Message: Name parts must exist in label if present
+  
+Focus nodes for _sources/compoundName/ontology/shapes.shacl:
+ - Shape :NamePartShape: _:ne230b3a7c8d4480b88ca8f824ff8b29db2
+ - Shape :CompoundNameShape: *none*
+
+=== End SHACL ===
+

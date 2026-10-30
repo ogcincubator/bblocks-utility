@@ -2,7 +2,7 @@
   "title": "Validation report for ogc.bbr.utils.compoundName.schema - Compound Name",
   "bblockName": "Compound Name",
   "bblockId": "ogc.bbr.utils.compoundName.schema",
-  "generated": "2026-10-26T07:44:13.898988+00:00",
+  "generated": "2026-10-30T12:54:06.281074+00:00",
   "result": true,
   "items": [
     {
@@ -76,18 +76,18 @@
             {
               "shaclFile": "_sources/compoundName/ontology/shapes.shacl",
               "focusNodes": {
-                ":MeasureShape": {
-                  "nodes": []
-                },
                 ":NamePartShape": {
-                  "nodes": []
+                  "nodes": [
+                    "_:N49b7612832dc4f16bd12fa33084a11ec",
+                    "_:N8a06e7fb077342beac2f102ea54723cb"
+                  ]
                 },
                 ":CompoundNameShape": {
                   "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/compoundName/ontology/shapes.shacl:\n - Shape :MeasureShape: *none*\n - Shape :NamePartShape: *none*\n - Shape :CompoundNameShape: *none*\n"
+              "message": "Focus nodes for _sources/compoundName/ontology/shapes.shacl:\n - Shape :NamePartShape: _:N49b7612832dc4f16bd12fa33084a11ec,_:N8a06e7fb077342beac2f102ea54723cb\n - Shape :CompoundNameShape: *none*\n"
             }
           ]
         }
@@ -164,18 +164,18 @@
             {
               "shaclFile": "_sources/compoundName/ontology/shapes.shacl",
               "focusNodes": {
-                ":MeasureShape": {
-                  "nodes": []
-                },
                 ":NamePartShape": {
-                  "nodes": []
+                  "nodes": [
+                    "_:Nc699b3e407f84fd2ac908ed3a970416f",
+                    "_:Ne06d9646f05e43208b5a87bf7ff6cc31"
+                  ]
                 },
                 ":CompoundNameShape": {
                   "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/compoundName/ontology/shapes.shacl:\n - Shape :MeasureShape: *none*\n - Shape :NamePartShape: *none*\n - Shape :CompoundNameShape: *none*\n"
+              "message": "Focus nodes for _sources/compoundName/ontology/shapes.shacl:\n - Shape :NamePartShape: _:Nc699b3e407f84fd2ac908ed3a970416f,_:Ne06d9646f05e43208b5a87bf7ff6cc31\n - Shape :CompoundNameShape: *none*\n"
             }
           ]
         }

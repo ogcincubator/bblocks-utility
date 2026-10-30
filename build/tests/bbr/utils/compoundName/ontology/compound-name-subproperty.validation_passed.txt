@@ -1,5 +1,5 @@
 Validation report for ogc.bbr.utils.compoundName.ontology - Compound Name Model
-Generated 2026-10-26T07:44:13.393609+00:00
+Generated 2026-10-30T12:54:06.031996+00:00
 === Files ===
 Using example_3_1.ttl from examples
 Output Turtle compound-name-subproperty.ttl created
@@ -18,8 +18,7 @@ Validation result for _sources/compoundName/ontology/shapes.shacl:
   Conforms: True
   
 Focus nodes for _sources/compoundName/ontology/shapes.shacl:
- - Shape :MeasureShape: *none*
- - Shape :NamePartShape: *none*
+ - Shape :NamePartShape: ex:lot1/ex:officialName/dct:hasPart
  - Shape :CompoundNameShape: *none*
 
 === End SHACL ===

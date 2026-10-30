@@ -10,7 +10,7 @@
   "itemClass": "schema",
   "register": "icsm-csdm",
   "version": "0.1",
-  "dateOfLastChange": "2026-10-26",
+  "dateOfLastChange": "2026-10-30",
   "link": "https://github.com/icsm-au/3d-csdm-schema",
   "sources": [
     {
@@ -66,7 +66,7 @@
           "language": "ttl",
           "url": "https://ogcincubator.github.io/bblocks-utility/build/tests/bbr/utils/compoundName/schema/example_1_1.ttl",
           "sizeBytes": 453,
-          "code": "@prefix commonpatterns: <https://w3id.org/ogc/utils/label/> .\n@prefix dcterms: <http://purl.org/dc/terms/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n\n[] rdfs:label \"IS II - DP 3333\" ;\n    dcterms:hasPart [ rdfs:label \"DP 3333\" ;\n            commonpatterns:namePartType <http://www.example.com/namedobjects/Source> ],\n        [ rdfs:label \"IS II\" ;\n            commonpatterns:namePartType <http://www.example.com/namedobjects/Stamp> ] .\n\n"
+          "code": "@prefix commonpatterns: <https://w3id.org/ogc/utils/label/> .\n@prefix dcterms: <http://purl.org/dc/terms/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n\n[] rdfs:label \"IS II - DP 3333\" ;\n    dcterms:hasPart [ rdfs:label \"IS II\" ;\n            commonpatterns:namePartType <http://www.example.com/namedobjects/Stamp> ],\n        [ rdfs:label \"DP 3333\" ;\n            commonpatterns:namePartType <http://www.example.com/namedobjects/Source> ] .\n\n"
         }
       ]
     },
@@ -96,12 +96,12 @@
           "language": "ttl",
           "url": "https://ogcincubator.github.io/bblocks-utility/build/tests/bbr/utils/compoundName/schema/example_2_1.ttl",
           "sizeBytes": 594,
-          "code": "@prefix commonpatterns: <https://w3id.org/ogc/utils/label/> .\n@prefix dcterms: <http://purl.org/dc/terms/> .\n@prefix namerefs: <http://www.example.com/namerefs/> .\n@prefix nametype: <http://www.example.com/nametypes/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n\n[] rdfs:label \"IS II - DP 3333\" ;\n    dcterms:hasPart [ rdfs:label \"DP 3333\" ;\n            commonpatterns:namePartRef namerefs:dp333 ;\n            commonpatterns:namePartType nametype:planTypes ],\n        [ rdfs:label \"IS II\" ;\n            commonpatterns:namePartType <http://www.example.com/namedobjects/Stamp> ] .\n\n"
+          "code": "@prefix commonpatterns: <https://w3id.org/ogc/utils/label/> .\n@prefix dcterms: <http://purl.org/dc/terms/> .\n@prefix namerefs: <http://www.example.com/namerefs/> .\n@prefix nametype: <http://www.example.com/nametypes/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n\n[] rdfs:label \"IS II - DP 3333\" ;\n    dcterms:hasPart [ rdfs:label \"IS II\" ;\n            commonpatterns:namePartType <http://www.example.com/namedobjects/Stamp> ],\n        [ rdfs:label \"DP 3333\" ;\n            commonpatterns:namePartRef namerefs:dp333 ;\n            commonpatterns:namePartType nametype:planTypes ] .\n\n"
         }
       ]
     }
   ],
-  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Compound Name\nanyOf:\n- required:\n  - label\n- required:\n  - hasPart\nadditionalProperties: true\nproperties:\n  label:\n    anyOf:\n    - type: 'null'\n    - type: string\n    x-jsonld-id: http://www.w3.org/2000/01/rdf-schema#label\n  template:\n    type: string\n  hasPart:\n    type: array\n    items:\n      type: object\n      additionalProperties: false\n      properties:\n        label:\n          type: string\n          x-jsonld-id: http://www.w3.org/2000/01/rdf-schema#label\n        ref:\n          $ref: https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/iri-or-curie/schema.yaml\n          x-jsonld-type: '@id'\n          x-jsonld-id: https://w3id.org/ogc/utils/label/namePartRef\n        type:\n          $ref: https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/iri-or-curie/schema.yaml\n          x-jsonld-type: '@id'\n          x-jsonld-id: https://w3id.org/ogc/utils/label/namePartType\n      anyOf:\n      - required:\n        - label\n      - required:\n        - ref\n    x-jsonld-id: http://purl.org/dc/terms/hasPart\nx-jsonld-extra-terms:\n  name: https://w3id.org/ogc/utils/label/name\n  CompoundName: https://w3id.org/ogc/utils/label/CompoundName\nx-jsonld-prefixes:\n  dct: http://purl.org/dc/terms/\n  commonpatterns: https://w3id.org/ogc/utils/label/\n  rdfs: http://www.w3.org/2000/01/rdf-schema#\nx-bblocks-metadata:\n  itemIdentifier: ogc.bbr.utils.compoundName.schema\n  register: https://ogcincubator.github.io/bblocks-utility/build/register.json\n  version: '0.1'\n  dateOfLastChange: '2026-10-26'\n",
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Compound Name\nanyOf:\n- required:\n  - label\n- required:\n  - hasPart\nadditionalProperties: true\nproperties:\n  label:\n    anyOf:\n    - type: 'null'\n    - type: string\n    x-jsonld-id: http://www.w3.org/2000/01/rdf-schema#label\n  template:\n    type: string\n  hasPart:\n    type: array\n    items:\n      type: object\n      additionalProperties: false\n      properties:\n        label:\n          type: string\n          x-jsonld-id: http://www.w3.org/2000/01/rdf-schema#label\n        ref:\n          $ref: https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/iri-or-curie/schema.yaml\n          x-jsonld-type: '@id'\n          x-jsonld-id: https://w3id.org/ogc/utils/label/namePartRef\n        type:\n          $ref: https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/iri-or-curie/schema.yaml\n          x-jsonld-type: '@id'\n          x-jsonld-id: https://w3id.org/ogc/utils/label/namePartType\n      anyOf:\n      - required:\n        - label\n      - required:\n        - ref\n    x-jsonld-id: http://purl.org/dc/terms/hasPart\nx-jsonld-extra-terms:\n  name: https://w3id.org/ogc/utils/label/name\n  CompoundName: https://w3id.org/ogc/utils/label/CompoundName\nx-jsonld-prefixes:\n  dct: http://purl.org/dc/terms/\n  commonpatterns: https://w3id.org/ogc/utils/label/\n  rdfs: http://www.w3.org/2000/01/rdf-schema#\nx-bblocks-metadata:\n  itemIdentifier: ogc.bbr.utils.compoundName.schema\n  register: https://ogcincubator.github.io/bblocks-utility/build/register.json\n  version: '0.1'\n  dateOfLastChange: '2026-10-30'\n",
   "gitRepository": "https://github.com/ogcincubator/bblocks-utility",
   "gitPath": "_sources/compoundName/schema"
 }

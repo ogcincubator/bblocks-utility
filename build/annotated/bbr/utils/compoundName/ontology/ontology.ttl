@@ -31,8 +31,7 @@
     rdfs:isDefinedBy ont: ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty rdfs:label ],
-        :Common ;
+            owl:onProperty rdfs:label ] ;
     skos:definition "An ordered list of name parts. The order may be specified by either a list implementation, by implicit order defined in a formatting specification, or within a more explicit model of name part types." ;
     skos:scopeNote "A compound name has a label (its preferred formatting), a set of parts (dct:hasPart), or both. Where both are present, the label of each part must appear in the compound label." ;
     foaf:depiction <https://surroundbitbucket.bitbucket.io/3d-cadastre/spec/CompoundName.png> .
@@ -43,12 +42,11 @@
     rdfs:isDefinedBy ont: ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty rdfs:label ],
-        :Common ;
+            owl:onProperty rdfs:label ] ;
     skos:definition "An ordered part of a compound name." ;
     skos:scopeNote "A name part has a label, a reference to the thing it names (namePartRef), or both, and optionally a functional role (namePartType)." .
 
 ont: a owl:Ontology ;
-    rdfs:label "Common implementation patterns not directly supported by other standards" ;
+    rdfs:label "Compound names" ;
     dct:source <https://linked.data.gov.au/def/csdm/commonpatterns> .
 

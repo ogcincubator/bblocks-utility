@@ -28,7 +28,7 @@
         [ dct:format "application/json" ;
             rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-utility/build/generateddocs/json-full/bbr/utils/compoundName/schema/index.json> ] ;
     dct:hasVersion "0.1" ;
-    dct:modified "2026-10-26"^^xsd:date ;
+    dct:modified "2026-10-30"^^xsd:date ;
     dct:source <https://github.com/icsm-au/3d-csdm> ;
     skos:inScheme <https://ogcincubator.github.io/bblocks-utility/> ;
     skos:prefLabel "Compound Name" ;
@@ -39,10 +39,6 @@
             rdfs:seeAlso <bblocks://ogc.bbr.utils.compoundName.ontology> ;
             prof:hasArtifact <https://ogcincubator.github.io/bblocks-utility/_sources/compoundName/ontology/shapes.shacl> ;
             prof:hasRole role:validation ],
-        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/utils/compoundName/schema/context.jsonld> ;
-            prof:hasRole role:mapping ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/json" ;
             prof:hasArtifact <https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/utils/compoundName/schema/schema.json> ;
@@ -50,7 +46,11 @@
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
             prof:hasArtifact <https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/utils/compoundName/schema/schema.yaml> ;
-            prof:hasRole role:schema ] ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/utils/compoundName/schema/context.jsonld> ;
+            prof:hasRole role:mapping ] ;
     bblocks:dependsOn <bblocks://ogc.bbr.utils.compoundName.ontology>,
         <bblocks://ogc.ogc-utils.iri-or-curie> ;
     bblocks:hasSourceJsonLdContext <https://ogcincubator.github.io/bblocks-utility/_sources/compoundName/schema/context.jsonld> ;
@@ -62,48 +62,48 @@
 
 <https://ogcincubator.github.io/bblocks-utility/build/bblocks.ttl> a prov:Entity ;
     dct:format "text/turtle" ;
-    prov:wasAttributedTo _:N1d649e27208141e8bd3b95b9d1f07112 ;
+    prov:wasAttributedTo _:N87cc0551c06a4adc80f2be94696a5f3e ;
     prov:wasGeneratedBy [ a prov:Activity ;
-            prov:endedAtTime "2026-10-26T07:44:14.076791"^^xsd:dateTime ;
-            prov:startedAtTime "2026-10-26T07:44:13.921350"^^xsd:dateTime ;
+            prov:endedAtTime "2026-10-30T12:54:06.484416"^^xsd:dateTime ;
+            prov:startedAtTime "2026-10-30T12:54:06.302994"^^xsd:dateTime ;
             prov:used [ a prov:Entity ;
                     dct:format "application/yaml" ;
                     rdfs:seeAlso <file:///src/ogc/bblocks/register-context.yaml> ],
                 [ a prov:Entity ;
                     dct:format "application/json" ;
-                    dct:hasVersion "git:17d59f11ec22e64493b457e0a9d4783fd4f6c963" ;
+                    dct:hasVersion "git:8a22ddd69d14ed8fe26cb1aed375c5a8b965ff71" ;
                     rdfs:seeAlso <https://ogcincubator.github.io/bblocks-utility/build/register.json> ] ;
-            prov:wasAssociatedWith _:N1d649e27208141e8bd3b95b9d1f07112 ] .
+            prov:wasAssociatedWith _:N87cc0551c06a4adc80f2be94696a5f3e ] .
 
 <bblocks://ogc.bbr.utils.compoundName.ontology> a skos:Concept,
         dcat:Dataset,
         bblocks:BBlock,
         bblocks:Model ;
     rdfs:label "Compound Name Model" ;
-    dct:abstract "Ontology and SHACL rules for common implementation patterns not directly supported by other standards: compound names and name parts, qualified measures, jurisdictional codelists and reports."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
+    dct:abstract "Ontology and SHACL rules for compound names: names made of typed name parts, with rules for how the parts relate to the formatted name."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2026-10-26T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-utility/build/generateddocs/json-full/bbr/utils/compoundName/ontology/index.json> ],
+    dct:description [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-utility/build/generateddocs/markdown/bbr/utils/compoundName/ontology/index.md> ],
         [ dct:format "text/html" ;
             rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-utility/bblock/ogc.bbr.utils.compoundName.ontology> ],
-        [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-utility/build/generateddocs/markdown/bbr/utils/compoundName/ontology/index.md> ] ;
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://ogcincubator.github.io/bblocks-utility/build/generateddocs/json-full/bbr/utils/compoundName/ontology/index.json> ] ;
     dct:hasVersion "0.1" ;
-    dct:modified "2026-10-26"^^xsd:date ;
+    dct:modified "2026-10-30"^^xsd:date ;
     skos:closeMatch <https://w3id.org/ogc/utils/label> ;
     skos:inScheme <https://ogcincubator.github.io/bblocks-utility/> ;
     skos:prefLabel "Compound Name Model" ;
     skos:topConceptOf <https://ogcincubator.github.io/bblocks-utility/> ;
     dcat:keyword "utils" ;
-    prof:hasResource [ dct:conformsTo owl:Ontology ;
-            dct:format "text/turtle" ;
-            prof:hasArtifact <https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/utils/compoundName/ontology/ontology.ttl> ;
-            prof:hasRole role:specification ],
-        [ dct:conformsTo shacl: ;
+    prof:hasResource [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://ogc.bbr.utils.compoundName.ontology> ;
             prof:hasArtifact <https://ogcincubator.github.io/bblocks-utility/_sources/compoundName/ontology/shapes.shacl> ;
-            prof:hasRole role:validation ] ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo owl:Ontology ;
+            dct:format "text/turtle" ;
+            prof:hasArtifact <https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/utils/compoundName/ontology/ontology.ttl> ;
+            prof:hasRole role:specification ] ;
     bblocks:dependsOn <bblocks://ogc.model.cross-domain.dcterms> ;
     bblocks:status <http://www.opengis.net/def/status/under-development> ;
     bblocks:validationPassed true .
@@ -116,29 +116,29 @@
 """^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:description """Things that are common, but not scoped OGC.  Labelling - such as different forms of multi-part and multilingual labels
 """^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
-    dct:modified "2026-10-26T07:44:11.163250"^^xsd:dateTime ;
+    dct:modified "2026-10-30T12:54:03.932619"^^xsd:dateTime ;
     owl:imports <https://ogcincubator.github.io/bblocks-skos/build/register.json>,
         <https://ogcincubator.github.io/cross-domain-model/build/register.json>,
         <https://opengeospatial.github.io/bblocks/register.json> ;
     skos:hasTopConcept <bblocks://ogc.bbr.utils.compoundName.ontology>,
         <bblocks://ogc.bbr.utils.compoundName.schema> ;
     skos:prefLabel "Building Blocks - Utility Building Blocks" ;
-    prof:hasResource [ rdfs:label "This Building Blocks Register in JSON-LD format" ;
-            dct:type "application/ld+json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/self> ;
-            ns2:hasTarget <https://ogcincubator.github.io/bblocks-utility/build/bblocks.jsonld> ],
-        [ rdfs:label "This Building Blocks Register in JSON format" ;
+    prof:hasResource [ rdfs:label "This Building Blocks Register in JSON format" ;
             dct:type "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/self> ;
             ns2:hasTarget <https://ogcincubator.github.io/bblocks-utility/build/register.json> ],
         [ rdfs:label "This Building Blocks Register in RDF Turtle format" ;
             dct:type "text/turtle" ;
             ns1:relation <http://www.iana.org/assignments/relation/self> ;
-            ns2:hasTarget <https://ogcincubator.github.io/bblocks-utility/build/bblocks.ttl> ] ;
+            ns2:hasTarget <https://ogcincubator.github.io/bblocks-utility/build/bblocks.ttl> ],
+        [ rdfs:label "This Building Blocks Register in JSON-LD format" ;
+            dct:type "application/ld+json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/self> ;
+            ns2:hasTarget <https://ogcincubator.github.io/bblocks-utility/build/bblocks.jsonld> ] ;
     foaf:homepage <https://ogcincubator.github.io/bblocks-utility/> ;
     bblocks:hasValidationReport <https://ogcincubator.github.io/bblocks-utility/build/tests/report.html> .
 
-_:N1d649e27208141e8bd3b95b9d1f07112 a prov:Agent,
+_:N87cc0551c06a4adc80f2be94696a5f3e a prov:Agent,
         schema:SoftwareApplication ;
     rdfs:label "OGC-NA tools" ;
     dct:hasVersion "0.5.36" ;

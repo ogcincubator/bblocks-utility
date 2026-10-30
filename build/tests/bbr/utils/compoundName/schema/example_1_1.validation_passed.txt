@@ -1,5 +1,5 @@
 Validation report for ogc.bbr.utils.compoundName.schema - Compound Name
-Generated 2026-10-26T07:44:13.874313+00:00
+Generated 2026-10-30T12:54:06.240169+00:00
 === Files ===
 Using examples/strings.json from examples
 JSON-LD context is present - uplifting
@@ -20,8 +20,7 @@ Validation result for _sources/compoundName/ontology/shapes.shacl:
   Conforms: True
   
 Focus nodes for _sources/compoundName/ontology/shapes.shacl:
- - Shape :MeasureShape: *none*
- - Shape :NamePartShape: *none*
+ - Shape :NamePartShape: _:N49b7612832dc4f16bd12fa33084a11ec,_:N8a06e7fb077342beac2f102ea54723cb
  - Shape :CompoundNameShape: *none*
 
 === End SHACL ===

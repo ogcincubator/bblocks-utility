@@ -64,7 +64,7 @@
     <body>
         <div class="container">
             <h1 class="title">Building blocks validation report</h1>
-            <small class="datetime">Generated at 2026-10-26T07:44:13.918146+00:00</small>
+            <small class="datetime">Generated at 2026-10-30T12:54:06.299891+00:00</small>
                 <p class="summary fw-semibold text-success">
                     Number of passing building blocks: 2 / 2 (100%)
                 </p>
@@ -133,7 +133,13 @@
                                                                     <div class="font-monospace entry-message section-shacl text-danger">Validation result for _sources/compoundName/ontology/shapes.shacl:
   Validation Report
   Conforms: False
-  Results (1):
+  Results (2):
+  Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: :NamePartShape
+  	Focus Node: [ com:namePartType nametype:Stamp ]
+  	Value Node: [ com:namePartType nametype:Stamp ]
+  	Message: A name part must have a label, a reference, or both
   Constraint Violation in NodeConstraintComponent (http://www.w3.org/ns/shacl#NodeConstraintComponent):
   	Severity: sh:Violation
   	Source Shape: :CompoundName-hasPart
@@ -144,8 +150,7 @@
   </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/compoundName/ontology/shapes.shacl:
- - Shape :MeasureShape: *none*
- - Shape :NamePartShape: *none*
+ - Shape :NamePartShape: ex:lot1/com:name/dct:hasPart
  - Shape :CompoundNameShape: ex:lot1/com:name
 </div>
                                                     </div>
@@ -162,7 +167,7 @@
                                                         <i class="bi bi-caret-right-fill caret"></i>
                                                         Details
                                                     </button>
-                                                    <a href="../../_sources/compoundName/ontology/tests/measure-without-value-fail.ttl" target="_blank">measure-without-value-fail.ttl</a>
+                                                    <a href="../../_sources/compoundName/ontology/tests/part-not-in-label-fail.ttl" target="_blank">part-not-in-label-fail.ttl</a>
                                                     <span class="badge bg-secondary test_resource">Test resource</span>
                                                         <span class="badge text-bg-info">Requires fail</span>
                                                     <a class="anchor" href="#item-ogc.bbr.utils.compoundName.ontology-2">¶</a>
@@ -171,62 +176,6 @@
                                                     </div>
                                                 </div>
                                                 <div class="card-text mt-2 validation-text collapse" id="uid-2">
-                                                    <div class="validation-text-inner">
-                                                                    <div class="font-monospace subsection-title mt-2">General</div>
-                                                                
-                                                                    
-                                                                    <div class="font-monospace entry-message section-general ">Test was expected to fail and it did.</div>
-                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
-                                                                
-                                                                    
-                                                                    <div class="font-monospace entry-message section-files ">Using measure-without-value-fail.ttl from test resources</div>
-                                                                    <div class="font-monospace subsection-title mt-2">SHACL</div>
-                                                                
-                                                                    
-                                                                    <div class="font-monospace entry-message section-shacl ">Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):
- - https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_terms.ttl
- - /github/workspace/_sources/compoundName/ontology/ontology.ttl</div>
-                                                                    
-                                                                    <div class="font-monospace entry-message section-shacl text-danger">Validation result for _sources/compoundName/ontology/shapes.shacl:
-  Validation Report
-  Conforms: False
-  Results (1):
-  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
-  	Severity: sh:Violation
-  	Source Shape: [ sh:datatype xsd:decimal ; sh:maxCount Literal(&quot;1&quot;, datatype=xsd:integer) ; sh:minCount Literal(&quot;1&quot;, datatype=xsd:integer) ; sh:path :value ]
-  	Focus Node: ex:m1
-  	Result Path: :value
-  	Message: Less than 1 values on ex:m1-&gt;:value
-  </div>
-                                                                    
-                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/compoundName/ontology/shapes.shacl:
- - Shape :MeasureShape: ex:m1
- - Shape :NamePartShape: *none*
- - Shape :CompoundNameShape: *none*
-</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card mb-2 validation-item require-fail" id="item-ogc.bbr.utils.compoundName.ontology-3">
-                                            <div class="card-body">
-                                                <div class="card-title mb-0 anchor-container">
-                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
-                                                            data-bs-toggle="collapse" data-bs-target="#uid-3"
-                                                            aria-expanded="false" aria-controls="uid-3"
-                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
-                                                        <i class="bi bi-caret-right-fill caret"></i>
-                                                        Details
-                                                    </button>
-                                                    <a href="../../_sources/compoundName/ontology/tests/part-not-in-label-fail.ttl" target="_blank">part-not-in-label-fail.ttl</a>
-                                                    <span class="badge bg-secondary test_resource">Test resource</span>
-                                                        <span class="badge text-bg-info">Requires fail</span>
-                                                    <a class="anchor" href="#item-ogc.bbr.utils.compoundName.ontology-3">¶</a>
-                                                    <div class="float-end">
-                                                            <span class="badge text-bg-success me-2">Passed</span>
-                                                    </div>
-                                                </div>
-                                                <div class="card-text mt-2 validation-text collapse" id="uid-3">
                                                     <div class="validation-text-inner">
                                                                     <div class="font-monospace subsection-title mt-2">General</div>
                                                                 
@@ -266,9 +215,70 @@
   </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/compoundName/ontology/shapes.shacl:
- - Shape :MeasureShape: *none*
  - Shape :NamePartShape: *none*
  - Shape :CompoundNameShape: ex:lot1/com:name
+</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card mb-2 validation-item require-fail" id="item-ogc.bbr.utils.compoundName.ontology-3">
+                                            <div class="card-body">
+                                                <div class="card-title mb-0 anchor-container">
+                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-3"
+                                                            aria-expanded="false" aria-controls="uid-3"
+                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                                        <i class="bi bi-caret-right-fill caret"></i>
+                                                        Details
+                                                    </button>
+                                                    <a href="../../_sources/compoundName/ontology/tests/standalone-empty-part-fail.ttl" target="_blank">standalone-empty-part-fail.ttl</a>
+                                                    <span class="badge bg-secondary test_resource">Test resource</span>
+                                                        <span class="badge text-bg-info">Requires fail</span>
+                                                    <a class="anchor" href="#item-ogc.bbr.utils.compoundName.ontology-3">¶</a>
+                                                    <div class="float-end">
+                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-3">
+                                                    <div class="validation-text-inner">
+                                                                    <div class="font-monospace subsection-title mt-2">General</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-general ">Test was expected to fail and it did.</div>
+                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-files ">Using standalone-empty-part-fail.ttl from test resources</div>
+                                                                    <div class="font-monospace subsection-title mt-2">SHACL</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):
+ - https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_terms.ttl
+ - /github/workspace/_sources/compoundName/ontology/ontology.ttl</div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl text-danger">Validation result for _sources/compoundName/ontology/shapes.shacl:
+  Validation Report
+  Conforms: False
+  Results (2):
+  Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: :NamePartShape
+  	Focus Node: [ com:namePartType nametype:number ]
+  	Value Node: [ com:namePartType nametype:number ]
+  	Message: A name part must have a label, a reference, or both
+  Constraint Violation in NodeConstraintComponent (http://www.w3.org/ns/shacl#NodeConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: :CompoundName-hasPart
+  	Focus Node: [ dct:hasPart [ com:namePartType nametype:number ] ; rdfs:label Literal(&quot;Albany Town Lot 57&quot;) ]
+  	Value Node: [ com:namePartType nametype:number ]
+  	Result Path: dct:hasPart
+  	Message: Value does not conform to Shape :NamePartShape
+  </div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/compoundName/ontology/shapes.shacl:
+ - Shape :NamePartShape: _:nf9adaa5921ed40a690e10265ce6fcb8ab2
+ - Shape :CompoundNameShape: *none*
 </div>
                                                     </div>
                                                 </div>
@@ -284,7 +294,7 @@
                                                         <i class="bi bi-caret-right-fill caret"></i>
                                                         Details
                                                     </button>
-                                                    <a href="../../_sources/compoundName/ontology/tests/subclass-part-not-in-label-fail.ttl" target="_blank">subclass-part-not-in-label-fail.ttl</a>
+                                                    <a href="../../_sources/compoundName/ontology/tests/standalone-part-not-in-label-fail.ttl" target="_blank">standalone-part-not-in-label-fail.ttl</a>
                                                     <span class="badge bg-secondary test_resource">Test resource</span>
                                                         <span class="badge text-bg-info">Requires fail</span>
                                                     <a class="anchor" href="#item-ogc.bbr.utils.compoundName.ontology-4">¶</a>
@@ -293,6 +303,71 @@
                                                     </div>
                                                 </div>
                                                 <div class="card-text mt-2 validation-text collapse" id="uid-4">
+                                                    <div class="validation-text-inner">
+                                                                    <div class="font-monospace subsection-title mt-2">General</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-general ">Test was expected to fail and it did.</div>
+                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-files ">Using standalone-part-not-in-label-fail.ttl from test resources</div>
+                                                                    <div class="font-monospace subsection-title mt-2">SHACL</div>
+                                                                
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):
+ - https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_terms.ttl
+ - /github/workspace/_sources/compoundName/ontology/ontology.ttl</div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl text-danger">Validation result for _sources/compoundName/ontology/shapes.shacl:
+  Validation Report
+  Conforms: False
+  Results (1):
+  Constraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: :CompoundName-partsInLabel
+  	Focus Node: [ dct:hasPart [ com:namePartType nametype:number ; rdfs:label Literal(&quot;Lot 7&quot;) ] ; rdfs:label Literal(&quot;Albany Town Lot 57&quot;) ]
+  	Value Node: Literal(&quot;Lot 7&quot;)
+  	Result Path: rdfs:label
+  	Source Constraint: [ sh:message Literal(&quot;Name parts must exist in label if present&quot;) ; sh:prefixes :prefixes ; sh:select Literal(&quot;
+          SELECT $this (rdfs:label AS ?path) ?value
+          WHERE {
+            $this dct:hasPart ?p .
+            $this rdfs:label ?label .
+            ?p rdfs:label ?value
+            FILTER ( ! CONTAINS( LCASE(?label), LCASE(?value)) )
+          }
+          &quot;) ]
+  	Message: Name parts must exist in label if present
+  </div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/compoundName/ontology/shapes.shacl:
+ - Shape :NamePartShape: _:ne230b3a7c8d4480b88ca8f824ff8b29db2
+ - Shape :CompoundNameShape: *none*
+</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card mb-2 validation-item require-fail" id="item-ogc.bbr.utils.compoundName.ontology-5">
+                                            <div class="card-body">
+                                                <div class="card-title mb-0 anchor-container">
+                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-5"
+                                                            aria-expanded="false" aria-controls="uid-5"
+                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                                        <i class="bi bi-caret-right-fill caret"></i>
+                                                        Details
+                                                    </button>
+                                                    <a href="../../_sources/compoundName/ontology/tests/subclass-part-not-in-label-fail.ttl" target="_blank">subclass-part-not-in-label-fail.ttl</a>
+                                                    <span class="badge bg-secondary test_resource">Test resource</span>
+                                                        <span class="badge text-bg-info">Requires fail</span>
+                                                    <a class="anchor" href="#item-ogc.bbr.utils.compoundName.ontology-5">¶</a>
+                                                    <div class="float-end">
+                                                            <span class="badge text-bg-success me-2">Passed</span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-5">
                                                     <div class="validation-text-inner">
                                                                     <div class="font-monospace subsection-title mt-2">General</div>
                                                                 
@@ -332,7 +407,6 @@
   </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/compoundName/ontology/shapes.shacl:
- - Shape :MeasureShape: *none*
  - Shape :NamePartShape: *none*
  - Shape :CompoundNameShape: ex:plan1
 </div>
@@ -340,12 +414,12 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="card mb-2 validation-item require-fail" id="item-ogc.bbr.utils.compoundName.ontology-5">
+                                        <div class="card mb-2 validation-item require-fail" id="item-ogc.bbr.utils.compoundName.ontology-6">
                                             <div class="card-body">
                                                 <div class="card-title mb-0 anchor-container">
                                                     <button type="button" class="btn btn-sm btn-primary collapsed"
-                                                            data-bs-toggle="collapse" data-bs-target="#uid-5"
-                                                            aria-expanded="false" aria-controls="uid-5"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-6"
+                                                            aria-expanded="false" aria-controls="uid-6"
                                                             style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
                                                         <i class="bi bi-caret-right-fill caret"></i>
                                                         Details
@@ -353,12 +427,12 @@
                                                     <a href="../../_sources/compoundName/ontology/tests/subproperty-chain-empty-part-fail.ttl" target="_blank">subproperty-chain-empty-part-fail.ttl</a>
                                                     <span class="badge bg-secondary test_resource">Test resource</span>
                                                         <span class="badge text-bg-info">Requires fail</span>
-                                                    <a class="anchor" href="#item-ogc.bbr.utils.compoundName.ontology-5">¶</a>
+                                                    <a class="anchor" href="#item-ogc.bbr.utils.compoundName.ontology-6">¶</a>
                                                     <div class="float-end">
                                                             <span class="badge text-bg-success me-2">Passed</span>
                                                     </div>
                                                 </div>
-                                                <div class="card-text mt-2 validation-text collapse" id="uid-5">
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-6">
                                                     <div class="validation-text-inner">
                                                                     <div class="font-monospace subsection-title mt-2">General</div>
                                                                 
@@ -378,7 +452,13 @@
                                                                     <div class="font-monospace entry-message section-shacl text-danger">Validation result for _sources/compoundName/ontology/shapes.shacl:
   Validation Report
   Conforms: False
-  Results (1):
+  Results (2):
+  Constraint Violation in OrConstraintComponent (http://www.w3.org/ns/shacl#OrConstraintComponent):
+  	Severity: sh:Violation
+  	Source Shape: :NamePartShape
+  	Focus Node: [ com:namePartType nametype:Stamp ]
+  	Value Node: [ com:namePartType nametype:Stamp ]
+  	Message: A name part must have a label, a reference, or both
   Constraint Violation in NodeConstraintComponent (http://www.w3.org/ns/shacl#NodeConstraintComponent):
   	Severity: sh:Violation
   	Source Shape: :CompoundName-hasPart
@@ -389,20 +469,19 @@
   </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/compoundName/ontology/shapes.shacl:
- - Shape :MeasureShape: *none*
- - Shape :NamePartShape: *none*
+ - Shape :NamePartShape: ex:lot1/ex:registeredName/dct:hasPart
  - Shape :CompoundNameShape: *none*
 </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="card mb-2 validation-item require-fail" id="item-ogc.bbr.utils.compoundName.ontology-6">
+                                        <div class="card mb-2 validation-item require-fail" id="item-ogc.bbr.utils.compoundName.ontology-7">
                                             <div class="card-body">
                                                 <div class="card-title mb-0 anchor-container">
                                                     <button type="button" class="btn btn-sm btn-primary collapsed"
-                                                            data-bs-toggle="collapse" data-bs-target="#uid-6"
-                                                            aria-expanded="false" aria-controls="uid-6"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-7"
+                                                            aria-expanded="false" aria-controls="uid-7"
                                                             style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
                                                         <i class="bi bi-caret-right-fill caret"></i>
                                                         Details
@@ -410,12 +489,12 @@
                                                     <a href="../../_sources/compoundName/ontology/tests/subproperty-part-not-in-label-fail.ttl" target="_blank">subproperty-part-not-in-label-fail.ttl</a>
                                                     <span class="badge bg-secondary test_resource">Test resource</span>
                                                         <span class="badge text-bg-info">Requires fail</span>
-                                                    <a class="anchor" href="#item-ogc.bbr.utils.compoundName.ontology-6">¶</a>
+                                                    <a class="anchor" href="#item-ogc.bbr.utils.compoundName.ontology-7">¶</a>
                                                     <div class="float-end">
                                                             <span class="badge text-bg-success me-2">Passed</span>
                                                     </div>
                                                 </div>
-                                                <div class="card-text mt-2 validation-text collapse" id="uid-6">
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-7">
                                                     <div class="validation-text-inner">
                                                                     <div class="font-monospace subsection-title mt-2">General</div>
                                                                 
@@ -455,7 +534,6 @@
   </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/compoundName/ontology/shapes.shacl:
- - Shape :MeasureShape: *none*
  - Shape :NamePartShape: *none*
  - Shape :CompoundNameShape: *none*
 </div>
@@ -463,24 +541,24 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="card mb-2 validation-item " id="item-ogc.bbr.utils.compoundName.ontology-7">
+                                        <div class="card mb-2 validation-item " id="item-ogc.bbr.utils.compoundName.ontology-8">
                                             <div class="card-body">
                                                 <div class="card-title mb-0 anchor-container">
                                                     <button type="button" class="btn btn-sm btn-primary collapsed"
-                                                            data-bs-toggle="collapse" data-bs-target="#uid-7"
-                                                            aria-expanded="false" aria-controls="uid-7"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-8"
+                                                            aria-expanded="false" aria-controls="uid-8"
                                                             style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
                                                         <i class="bi bi-caret-right-fill caret"></i>
                                                         Details
                                                     </button>
                                                     <a href="bbr/utils/compoundName/ontology/compound-name.ttl" target="_blank">compound-name.ttl</a>
                                                     <span class="badge bg-secondary example">Example</span>
-                                                    <a class="anchor" href="#item-ogc.bbr.utils.compoundName.ontology-7">¶</a>
+                                                    <a class="anchor" href="#item-ogc.bbr.utils.compoundName.ontology-8">¶</a>
                                                     <div class="float-end">
                                                             <span class="badge text-bg-success me-2">Passed</span>
                                                     </div>
                                                 </div>
-                                                <div class="card-text mt-2 validation-text collapse" id="uid-7">
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-8">
                                                     <div class="validation-text-inner">
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
                                                                 
@@ -505,32 +583,31 @@
   </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/compoundName/ontology/shapes.shacl:
- - Shape :MeasureShape: *none*
- - Shape :NamePartShape: *none*
+ - Shape :NamePartShape: ex:lot1/com:name/dct:hasPart,ex:lot1/com:name/dct:hasPart
  - Shape :CompoundNameShape: ex:lot1/com:name
 </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="card mb-2 validation-item " id="item-ogc.bbr.utils.compoundName.ontology-8">
+                                        <div class="card mb-2 validation-item " id="item-ogc.bbr.utils.compoundName.ontology-9">
                                             <div class="card-body">
                                                 <div class="card-title mb-0 anchor-container">
                                                     <button type="button" class="btn btn-sm btn-primary collapsed"
-                                                            data-bs-toggle="collapse" data-bs-target="#uid-8"
-                                                            aria-expanded="false" aria-controls="uid-8"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-9"
+                                                            aria-expanded="false" aria-controls="uid-9"
                                                             style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
                                                         <i class="bi bi-caret-right-fill caret"></i>
                                                         Details
                                                     </button>
                                                     <a href="bbr/utils/compoundName/ontology/compound-name-subclass.ttl" target="_blank">compound-name-subclass.ttl</a>
                                                     <span class="badge bg-secondary example">Example</span>
-                                                    <a class="anchor" href="#item-ogc.bbr.utils.compoundName.ontology-8">¶</a>
+                                                    <a class="anchor" href="#item-ogc.bbr.utils.compoundName.ontology-9">¶</a>
                                                     <div class="float-end">
                                                             <span class="badge text-bg-success me-2">Passed</span>
                                                     </div>
                                                 </div>
-                                                <div class="card-text mt-2 validation-text collapse" id="uid-8">
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-9">
                                                     <div class="validation-text-inner">
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
                                                                 
@@ -555,32 +632,31 @@
   </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/compoundName/ontology/shapes.shacl:
- - Shape :MeasureShape: *none*
- - Shape :NamePartShape: *none*
+ - Shape :NamePartShape: ex:plan1/dct:hasPart,ex:plan1/dct:hasPart
  - Shape :CompoundNameShape: ex:plan1
 </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="card mb-2 validation-item " id="item-ogc.bbr.utils.compoundName.ontology-9">
+                                        <div class="card mb-2 validation-item " id="item-ogc.bbr.utils.compoundName.ontology-10">
                                             <div class="card-body">
                                                 <div class="card-title mb-0 anchor-container">
                                                     <button type="button" class="btn btn-sm btn-primary collapsed"
-                                                            data-bs-toggle="collapse" data-bs-target="#uid-9"
-                                                            aria-expanded="false" aria-controls="uid-9"
+                                                            data-bs-toggle="collapse" data-bs-target="#uid-10"
+                                                            aria-expanded="false" aria-controls="uid-10"
                                                             style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
                                                         <i class="bi bi-caret-right-fill caret"></i>
                                                         Details
                                                     </button>
                                                     <a href="bbr/utils/compoundName/ontology/compound-name-subproperty.ttl" target="_blank">compound-name-subproperty.ttl</a>
                                                     <span class="badge bg-secondary example">Example</span>
-                                                    <a class="anchor" href="#item-ogc.bbr.utils.compoundName.ontology-9">¶</a>
+                                                    <a class="anchor" href="#item-ogc.bbr.utils.compoundName.ontology-10">¶</a>
                                                     <div class="float-end">
                                                             <span class="badge text-bg-success me-2">Passed</span>
                                                     </div>
                                                 </div>
-                                                <div class="card-text mt-2 validation-text collapse" id="uid-9">
+                                                <div class="card-text mt-2 validation-text collapse" id="uid-10">
                                                     <div class="validation-text-inner">
                                                                     <div class="font-monospace subsection-title mt-2">Files</div>
                                                                 
@@ -605,58 +681,7 @@
   </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/compoundName/ontology/shapes.shacl:
- - Shape :MeasureShape: *none*
- - Shape :NamePartShape: *none*
- - Shape :CompoundNameShape: *none*
-</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card mb-2 validation-item " id="item-ogc.bbr.utils.compoundName.ontology-10">
-                                            <div class="card-body">
-                                                <div class="card-title mb-0 anchor-container">
-                                                    <button type="button" class="btn btn-sm btn-primary collapsed"
-                                                            data-bs-toggle="collapse" data-bs-target="#uid-10"
-                                                            aria-expanded="false" aria-controls="uid-10"
-                                                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
-                                                        <i class="bi bi-caret-right-fill caret"></i>
-                                                        Details
-                                                    </button>
-                                                    <a href="bbr/utils/compoundName/ontology/measure.ttl" target="_blank">measure.ttl</a>
-                                                    <span class="badge bg-secondary example">Example</span>
-                                                    <a class="anchor" href="#item-ogc.bbr.utils.compoundName.ontology-10">¶</a>
-                                                    <div class="float-end">
-                                                            <span class="badge text-bg-success me-2">Passed</span>
-                                                    </div>
-                                                </div>
-                                                <div class="card-text mt-2 validation-text collapse" id="uid-10">
-                                                    <div class="validation-text-inner">
-                                                                    <div class="font-monospace subsection-title mt-2">Files</div>
-                                                                
-                                                                    
-                                                                    <div class="font-monospace entry-message section-files ">Using example_4_1.ttl from examples</div>
-                                                                    
-                                                                    <div class="font-monospace entry-message section-files ">Output Turtle measure.ttl created</div>
-                                                                    <div class="font-monospace subsection-title mt-2">Turtle</div>
-                                                                
-                                                                    
-                                                                    <div class="font-monospace entry-message section-turtle ">Prefixes are defined for com, dct, rdfs, ex, nametype, namerefs</div>
-                                                                    <div class="font-monospace subsection-title mt-2">SHACL</div>
-                                                                
-                                                                    
-                                                                    <div class="font-monospace entry-message section-shacl ">Using SHACL closure graph sources (declared closures, ontologies and RDF data resources):
- - https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_terms.ttl
- - /github/workspace/_sources/compoundName/ontology/ontology.ttl</div>
-                                                                    
-                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for _sources/compoundName/ontology/shapes.shacl:
-  Validation Report
-  Conforms: True
-  </div>
-                                                                    
-                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/compoundName/ontology/shapes.shacl:
- - Shape :MeasureShape: ex:m1
- - Shape :NamePartShape: *none*
+ - Shape :NamePartShape: ex:lot1/ex:officialName/dct:hasPart
  - Shape :CompoundNameShape: *none*
 </div>
                                                     </div>
@@ -734,8 +759,7 @@
   </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/compoundName/ontology/shapes.shacl:
- - Shape :MeasureShape: *none*
- - Shape :NamePartShape: *none*
+ - Shape :NamePartShape: _:N49b7612832dc4f16bd12fa33084a11ec,_:N8a06e7fb077342beac2f102ea54723cb
  - Shape :CompoundNameShape: *none*
 </div>
                                                     </div>
@@ -788,8 +812,7 @@
   </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for _sources/compoundName/ontology/shapes.shacl:
- - Shape :MeasureShape: *none*
- - Shape :NamePartShape: *none*
+ - Shape :NamePartShape: _:Nc699b3e407f84fd2ac908ed3a970416f,_:Ne06d9646f05e43208b5a87bf7ff6cc31
  - Shape :CompoundNameShape: *none*
 </div>
                                                     </div>

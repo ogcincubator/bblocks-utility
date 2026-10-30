@@ -3,7 +3,7 @@
 
 `ogc.bbr.utils.compoundName.ontology` *v0.1*
 
-Ontology and SHACL rules for common implementation patterns not directly supported by other standards: compound names and name parts, qualified measures, jurisdictional codelists and reports.
+Ontology and SHACL rules for compound names: names made of typed name parts, with rules for how the parts relate to the formatted name.
 
 [*Status*](http://www.opengis.net/def/status): Under development
 
@@ -13,10 +13,12 @@ Many regulations require complex naming rules, where components of a name must m
 
 This model defines a simple pattern for **compound names**, allowing applications to add additional rules to profile this for specific applications.
 
-This ontology was originally the Common Patterns module of the ICSM 3D Cadastral Survey Data Model (3D CSDM)
+The compound name pattern comes from the Common Patterns module of the ICSM 3D Cadastral Survey Data Model (3D CSDM)
 (`https://linked.data.gov.au/def/csdm/commonpatterns`). It has been generalised for reuse in the
 `https://w3id.org/ogc/utils/label/` namespace, which is also used by the Compound Name (`ogc.bbr.utils.compoundName`)
-JSON-LD context.
+JSON-LD context. The other CSDM common patterns (qualified measures, quality classes and measures, jurisdictional
+codelists, reports) are not part of this block; they are maintained in the CSDM model register as
+`icsm.csdm.model.commonpatterns`.
 
 ## SHACL rules
 
@@ -101,19 +103,6 @@ ex:lot1 ex:officialName [
     dct:hasPart [ rdfs:label "DP 3333" ] , [ com:namePartType nametype:Stamp ; rdfs:label "IS II" ]
   ] ;
   ex:registeredName [ rdfs:label "Lot 1" ] .
-
-```
-
-
-### Qualified measurement
-#### turtle
-```turtle
-@prefix com: <https://w3id.org/ogc/utils/label/> .
-@prefix ex: <http://www.example.com/measures/> .
-
-ex:m1 a com:Measure ;
-  com:value 17.055 ;
-  com:qualityMeasure 0.05 .
 
 ```
 

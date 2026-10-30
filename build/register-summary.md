@@ -12,7 +12,7 @@ Things that are common, but not scoped OGC.  Labelling - such as different forms
 
 **Type:** model
 
-Ontology and SHACL rules for common implementation patterns not directly supported by other standards: compound names and name parts, qualified measures, jurisdictional codelists and reports.
+Ontology and SHACL rules for compound names: names made of typed name parts, with rules for how the parts relate to the formatted name.
 
 ### `ogc.bbr.utils.compoundName.schema` — Compound Name
 

@@ -79,6 +79,6 @@
     "itemIdentifier": "ogc.bbr.utils.compoundName.schema",
     "register": "https://ogcincubator.github.io/bblocks-utility/build/register.json",
     "version": "0.1",
-    "dateOfLastChange": "2026-10-26"
+    "dateOfLastChange": "2026-10-30"
   }
 }
