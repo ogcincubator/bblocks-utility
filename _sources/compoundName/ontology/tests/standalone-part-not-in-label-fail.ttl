@@ -1,0 +1,9 @@
+# A standalone compound name, as produced by the JSON encoding: untyped and not the value of com:name.
+# It is recognised by its name parts, and fails because the part label "Lot 7" is not in the compound label.
+@prefix com: <https://w3id.org/ogc/utils/label/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix nametype: <http://www.example.com/nametypes/> .
+
+[] rdfs:label "Albany Town Lot 57" ;
+  dct:hasPart [ com:namePartType nametype:number ; rdfs:label "Lot 7" ] .
