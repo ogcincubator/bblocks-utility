@@ -11,7 +11,9 @@
     [ sh:prefix "rdfs" ; sh:namespace "http://www.w3.org/2000/01/rdf-schema#"^^xsd:anyURI ] ;
 .
 
-# Compound names: any instance of CompoundName, or any value of :name (the JSON encoding does not type them).
+# Compound names: any instance of CompoundName, any value of :name, or any node with name parts.
+# The JSON encoding does not type compound names, and a standalone compound name (e.g. a datatype example) is not
+# the value of :name, so a node whose dct:hasPart values carry :namePartType or :namePartRef is also targeted.
 # sh:targetClass also covers instances of subclasses (rdfs:subClassOf in the data graph), but sh:targetObjectsOf
 # does not follow rdfs:subPropertyOf, so values of specialisations of :name are targeted with SPARQL.
 :CompoundNameShape
@@ -26,6 +28,17 @@
         WHERE {
           ?p rdfs:subPropertyOf+ com:name .
           ?s ?p ?this .
+        }
+        """ ;
+    ] ;
+  sh:target [
+      a sh:SPARQLTarget ;
+      sh:prefixes :prefixes ;
+      sh:select """
+        SELECT DISTINCT ?this
+        WHERE {
+          ?this dct:hasPart ?part .
+          ?part com:namePartType|com:namePartRef ?x .
         }
         """ ;
     ] ;
@@ -76,10 +89,13 @@
     ] ;
 .
 
-# Name parts, as encoded by the compoundName JSON-LD context (label, ref -> namePartRef, type -> namePartType)
+# Name parts, as encoded by the compoundName JSON-LD context (label, ref -> namePartRef, type -> namePartType).
+# The JSON encoding does not type name parts, so subjects of :namePartType and :namePartRef (domain NamePart) are
+# also targeted. Untyped parts of a targeted compound name are checked through CompoundName-hasPart.
 :NamePartShape
   a sh:NodeShape ;
   sh:targetClass :NamePart ;
+  sh:targetSubjectsOf :namePartType , :namePartRef ;
   sh:or (
       [ sh:path rdfs:label ; sh:minCount 1 ]
       [ sh:path :namePartRef ; sh:minCount 1 ]
@@ -101,22 +117,6 @@
       sh:path :namePartType ;
       sh:name "Part Type" ;
       sh:nodeKind sh:IRI ;
-      sh:maxCount 1 ;
-    ] ;
-.
-
-:MeasureShape
-  a sh:NodeShape ;
-  sh:targetClass :Measure ;
-  sh:property [
-      sh:path :value ;
-      sh:datatype xsd:decimal ;
-      sh:minCount 1 ;
-      sh:maxCount 1 ;
-    ] ;
-  sh:property [
-      sh:path :qualityMeasure ;
-      sh:datatype xsd:decimal ;
       sh:maxCount 1 ;
     ] ;
 .

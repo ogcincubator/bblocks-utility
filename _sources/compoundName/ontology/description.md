@@ -2,10 +2,12 @@ Many regulations require complex naming rules, where components of a name must m
 
 This model defines a simple pattern for **compound names**, allowing applications to add additional rules to profile this for specific applications.
 
-This ontology was originally the Common Patterns module of the ICSM 3D Cadastral Survey Data Model (3D CSDM)
+The compound name pattern comes from the Common Patterns module of the ICSM 3D Cadastral Survey Data Model (3D CSDM)
 (`https://linked.data.gov.au/def/csdm/commonpatterns`). It has been generalised for reuse in the
 `https://w3id.org/ogc/utils/label/` namespace, which is also used by the Compound Name (`ogc.bbr.utils.compoundName`)
-JSON-LD context.
+JSON-LD context. The other CSDM common patterns (qualified measures, quality classes and measures, jurisdictional
+codelists, reports) are not part of this block; they are maintained in the CSDM model register as
+`icsm.csdm.model.commonpatterns`.
 
 ## SHACL rules
 
